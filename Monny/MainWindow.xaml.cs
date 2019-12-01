@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using DataAccess.Entities;
+using DataAccess;
+
 namespace Monny
 {
 	/// <summary>
@@ -24,6 +27,8 @@ namespace Monny
 		{
 			InitializeComponent();
 			OpenPage(pages.start);
+            //MonnyDbContext dbContext = new MonnyDbContext();
+            //List<Category> categories = dbContext.Set<Category>().ToList();
 		}
 		public enum pages
 		{

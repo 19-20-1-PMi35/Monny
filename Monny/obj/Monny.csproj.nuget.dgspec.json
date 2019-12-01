@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\Monny.csproj": {}
+    "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj": {}
   },
   "projects": {
-    "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\Monny.csproj": {
+    "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\Monny.csproj",
-        "projectName": "Monny",
-        "projectPath": "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\Monny.csproj",
-        "packagesPath": "C:\\Users\\MARIAN\\.nuget\\packages\\",
-        "outputPath": "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\obj\\",
+        "projectUniqueName": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\yura_\\.nuget\\packages\\",
+        "outputPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MARIAN\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\yura_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,9 +41,90 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj",
+        "projectName": "Monny",
+        "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj",
+        "packagesPath": "C:\\Users\\yura_\\.nuget\\packages\\",
+        "outputPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yura_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[2.6.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.1, )"
             }
           },
           "imports": [
@@ -62,7 +145,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
