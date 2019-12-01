@@ -28,7 +28,12 @@ namespace Monny
 		}
 		private void SignInButton_Click(object sender, RoutedEventArgs e)
 		{
-			// Check users credentials;
+			bool checkPassed = true;
+			// Check users credentials
+			if (checkPassed)
+			{
+				controller.OpenPage(MainWindow.pages.home);
+			}
 		}
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Monny"
         mc:Ignorable="d"
-        Title="Monny" Height="600" Width="1000">
+        Title="Monny" Height="600" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 	<Grid>
-		<Frame x:Name="frame" Height="600" Width="1000"/>
+		<Frame x:Name="frame" Height="600" Width="1000" NavigationUIVisibility="Hidden"/>
 	</Grid>
 </Window>

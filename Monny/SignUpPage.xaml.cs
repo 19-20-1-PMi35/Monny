@@ -30,6 +30,7 @@ namespace Monny
 		private void SignUpButton_Click(object sender, RoutedEventArgs e)
 		{
 			// Check password and write to db
+			controller.OpenPage(MainWindow.pages.home);
 		}
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)

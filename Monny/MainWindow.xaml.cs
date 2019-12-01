@@ -27,7 +27,7 @@ namespace Monny
 		}
 		public enum pages
 		{
-			start, signIn, signUp
+			start, signIn, signUp, home
 		}
 
 		public void OpenPage(pages pages)
@@ -39,6 +39,10 @@ namespace Monny
 			else if (pages == pages.signUp)
 			{
 				frame.Navigate(new SignUpPage(this));
+			}
+			else if (pages == pages.home)
+			{
+				frame.Navigate(new HomePage(this));
 			}
 			else
 			{
