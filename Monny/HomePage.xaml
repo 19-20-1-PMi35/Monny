@@ -43,7 +43,7 @@
 						<materialDesign:PackIcon Kind="Menu" Margin="-16" Width="30" Height="30"/>
 					</Button>
 				</Grid>
-				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonUp="ListView_PreviewMouseLeftButtonUp">
 					<ListViewItem Height="60">
 						<StackPanel Orientation="Horizontal">
 							<materialDesign:PackIcon Kind="Money" Width="25" Height="25" VerticalAlignment="Center"/>

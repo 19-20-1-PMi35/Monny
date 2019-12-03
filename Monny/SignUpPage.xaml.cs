@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using DataAccess.Entities;
+using DataAccess;
+
 namespace Monny
 {
 	/// <summary>
@@ -26,6 +29,8 @@ namespace Monny
 
 		private string savedConfirmPassword = "";
 		private bool doWorkConfirmPassword = true;
+
+        private MonnyDbContext dbContext = new MonnyDbContext();
 		public SignUpPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
@@ -45,11 +50,22 @@ namespace Monny
 			{
 				MessageBox.Show("Check data succeed");
 				MessageBox.Show(savedPassword + " --- " + savedConfirmPassword);
+
+                User user = new User();
+                user.Name = name.Text;
+                user.Surname = surname.Text;
+                user.Email = mail.Text;
+                user.Password = savedPassword;
+
+                dbContext.Set<User>().Add(user);
+                dbContext.SaveChanges();
 			}
 			else
 			{
 				MessageBox.Show("Check data failed");
 			}
+
+            
 		}
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)

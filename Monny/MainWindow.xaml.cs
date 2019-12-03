@@ -26,14 +26,15 @@ namespace Monny
 		public MainWindow()
 		{
 			InitializeComponent();
-			OpenPage(pages.start);
-			//MonnyDbContext dbContext = new MonnyDbContext();
-			//List<Category> categories = dbContext.Set<Category>().ToList();
-			//string sfsf = "dgd";
-		}
+            OpenPage(pages.expense);
+           // OpenPage(pages.start);
+   //         MonnyDbContext dbContext = new MonnyDbContext();
+   //         List<Category> categories = dbContext.Set<Category>().ToList();
+   //         string sfsf = "dgd";
+        }
 		public enum pages
 		{
-			start, signIn, signUp, home
+			start, signIn, signUp, home, expense
 		}
 
 		public void OpenPage(pages pages)
@@ -50,7 +51,11 @@ namespace Monny
 			{
 				frame.Navigate(new HomePage(this));
 			}
-			else
+            else if (pages == pages.expense)
+            {
+                frame.Navigate(new ExpensePage());
+            }
+            else
 			{
 				frame.Navigate(new StartPage(this));
 			}

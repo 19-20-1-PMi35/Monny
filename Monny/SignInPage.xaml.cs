@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using DataAccess;
+using DataAccess.Entities;
+
 namespace Monny
 {
 	/// <summary>
@@ -23,6 +26,8 @@ namespace Monny
 		private MainWindow controller;
 		private string savedPassword = "";
 		private bool doWorkPassword = true;
+
+        private MonnyDbContext dbContext = new MonnyDbContext();
 		public SignInPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
@@ -31,12 +36,24 @@ namespace Monny
 		private void SignInButton_Click(object sender, RoutedEventArgs e)
 		{
 			bool checkPassed = true;
+            checkPassed &= password.Text.Length != 0;
 			checkPassed &= App.ContainAtSign(mail.Text);
 			if (checkPassed)
 			{
-				controller.OpenPage(MainWindow.pages.home);
-			}
-		}
+				//controller.OpenPage(MainWindow.pages.home);
+
+                //User user = dbContext.Set<User>().ToList().Find(u => (u.Email == mail.Text && u.Password == savedPassword));
+
+                //if (user == null)
+                //{
+                //    MessageBox.Show("Incorrect data");
+                //}
+                //else
+                //{
+                    controller.OpenPage(MainWindow.pages.home);
+                //}
+            }
+        }
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)
 		{

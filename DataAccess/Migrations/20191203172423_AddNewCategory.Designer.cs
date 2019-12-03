@@ -4,14 +4,16 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(MonnyDbContext))]
-    partial class MonnyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191203172423_AddNewCategory")]
+    partial class AddNewCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,7 +39,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Food"
+                            Name = "Product"
                         },
                         new
                         {

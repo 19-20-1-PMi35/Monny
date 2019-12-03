@@ -1,0 +1,59 @@
+﻿<Page x:Class="Monny.ExpensePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Monny"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ExpensePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="DataPicker" FontSize="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <Button x:Name="food" Width="30" Height="30" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="food_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="Tea" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Food" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+        <Button x:Name="clothes" Width="30" Height="30" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="clothes_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="Hanger" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Clothes" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+        <Button x:Name="transport" Width="30" Height="30" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="transport_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="Bus" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Transport" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+        <Button x:Name="caffe" Width="30" Height="30" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="caffe_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="LocalCafe" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Caffe" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+        <Button x:Name="traveling" Width="30" Height="30" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="traveling_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="AeroplaneTakeoff" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Traveling" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+        <Button x:Name="health" Width="30" Height="30" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="health_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="Drupal" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Health" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+        <Button x:Name="entertainments" Width="30" Height="30" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="entertainments_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="Soccer" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Entertainments" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+        <Button x:Name="other" Width="30" Height="30" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="other_Click">
+            <materialDesign:PackIcon Margin="-16" Kind="AutoAwesome" Width="30" Height="30"/>
+        </Button>
+        <Label Content="Other" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+    </Grid>
+</Page>

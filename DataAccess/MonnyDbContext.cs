@@ -18,12 +18,13 @@ namespace DataAccess
         {
             var categories = new List<Category>
             {
-                new Category {Id = 1, Name = "Product"},
+                new Category {Id = 1, Name = "Food"},
                 new Category {Id = 2, Name = "Health"},
                 new Category {Id = 3, Name = "Traveling"},
                 new Category {Id = 4, Name = "Clothes"},
                 new Category {Id = 5, Name = "Cafes"},
-                new Category {Id = 6, Name = "Transport"}
+                new Category {Id = 6, Name = "Transport"},
+                new Category {Id = 7, Name = "Entertainments"}
             };
 
             modelBuilder.Entity<Category>().HasData(categories);

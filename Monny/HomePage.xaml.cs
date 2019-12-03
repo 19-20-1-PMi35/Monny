@@ -36,5 +36,10 @@ namespace Monny
 			OpenMenuButton.Visibility = Visibility.Visible;
 			CloseMenuButton.Visibility = Visibility.Collapsed;
 		}
-	}
+
+        private void ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            controller.OpenPage(MainWindow.pages.expense);
+        }
+    }
 }
