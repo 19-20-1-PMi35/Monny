@@ -35,7 +35,7 @@
 	<Grid Background="LightGray">
 		<Grid x:Name="GridMenu" Width="40" HorizontalAlignment="Left" Background="#FF315AE5">
 			<StackPanel>
-				<Grid Height="150" HorizontalAlignment="Left" Width="40">
+				<Grid Height="35" HorizontalAlignment="Left" Width="40">
 					<Button x:Name="CloseMenuButton" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Collapsed" Click="CloseMenuButton_Click">
 						<materialDesign:PackIcon Margin="-16" Kind="ArrowLeft" Width="30" Height="30"/>
 					</Button>
@@ -46,24 +46,32 @@
 				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 					<ListViewItem Height="60">
 						<StackPanel Orientation="Horizontal">
-							<materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" VerticalAlignment="Center"/>
-							<TextBlock Text="Create" VerticalAlignment="Center" Margin="20 10"/>
+							<materialDesign:PackIcon Kind="Money" Width="25" Height="25" VerticalAlignment="Center"/>
+							<TextBlock Text="Earning" VerticalAlignment="Center" Margin="20 10"/>
 						</StackPanel>
 					</ListViewItem>
 				</ListView>
 				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 					<ListViewItem Height="60">
 						<StackPanel Orientation="Horizontal">
-							<materialDesign:PackIcon Kind="Ticket" Width="25" Height="25" VerticalAlignment="Center"></materialDesign:PackIcon>
-							<TextBlock Text="Tickets" VerticalAlignment="Center" Margin="20 10"/>
+							<materialDesign:PackIcon Kind="ShoppingCart" Width="25" Height="25" VerticalAlignment="Center"></materialDesign:PackIcon>
+							<TextBlock Text="Spending" VerticalAlignment="Center" Margin="20 10"/>
 						</StackPanel>
 					</ListViewItem>
 				</ListView>
 				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 					<ListViewItem Height="60">
 						<StackPanel Orientation="Horizontal">
-							<materialDesign:PackIcon Kind="Message" Width="25" Height="25" VerticalAlignment="Center"></materialDesign:PackIcon>
-							<TextBlock Text="Messages" VerticalAlignment="Center" Margin="20 10"/>
+							<materialDesign:PackIcon Kind="TrendingUp" Width="25" Height="25" VerticalAlignment="Center"></materialDesign:PackIcon>
+							<TextBlock Text="Statistics" VerticalAlignment="Center" Margin="20 10"/>
+						</StackPanel>
+					</ListViewItem>
+				</ListView>
+				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+					<ListViewItem Height="60">
+						<StackPanel Orientation="Horizontal">
+							<materialDesign:PackIcon Kind="CardGiftcard" Width="25" Height="25" VerticalAlignment="Center"/>
+							<TextBlock Text="Dream" VerticalAlignment="Center" Margin="20 10"/>
 						</StackPanel>
 					</ListViewItem>
 				</ListView>

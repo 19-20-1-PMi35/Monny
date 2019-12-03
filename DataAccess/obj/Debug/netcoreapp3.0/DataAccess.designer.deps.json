@@ -6,25 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "MaterialDesignColors/1.2.0": {
-        "runtime": {
-          "lib/net45/MaterialDesignColors.dll": {
-            "assemblyVersion": "1.2.0.325",
-            "fileVersion": "1.2.0.325"
-          }
-        }
-      },
-      "MaterialDesignThemes/2.6.0": {
-        "dependencies": {
-          "MaterialDesignColors": "1.2.0"
-        },
-        "runtime": {
-          "lib/net45/MaterialDesignThemes.Wpf.dll": {
-            "assemblyVersion": "2.6.0.325",
-            "fileVersion": "2.6.0.325"
-          }
-        }
-      },
       "Microsoft.CSharp/4.6.0": {},
       "Microsoft.Data.SqlClient/1.0.19249.1": {
         "dependencies": {
@@ -118,6 +99,11 @@
             "assemblyVersion": "3.0.1.0",
             "fileVersion": "3.0.119.53112"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/3.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "3.0.1"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/3.0.1": {
@@ -1113,20 +1099,6 @@
     }
   },
   "libraries": {
-    "MaterialDesignColors/1.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tWopwGZk6ScDgjEyDrJuKPtuIF3KUfXP5TRqd7M5QTL8Nq46AB/NHF9VZ5fMUBOlEGWroaJb6lwLG6rjm9+hFw==",
-      "path": "materialdesigncolors/1.2.0",
-      "hashPath": "materialdesigncolors.1.2.0.nupkg.sha512"
-    },
-    "MaterialDesignThemes/2.6.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qg0Z0UJ2pvQmnBAtDAhbv9iE0amRK5/IC4ui4nIxCSIWhEEhQHl/ae6g9/wHzJOsuXoNBJF4m55fe7IFDX7yGw==",
-      "path": "materialdesignthemes/2.6.0",
-      "hashPath": "materialdesignthemes.2.6.0.nupkg.sha512"
-    },
     "Microsoft.CSharp/4.6.0": {
       "type": "package",
       "serviceable": true,
@@ -1182,6 +1154,13 @@
       "sha512": "sha512-z5yBGRbM/tfywVcFhHtA/EPL+ZJK+VhyxsnIQPSBV0lzmDKTx+mKSTnSpDCaDZwp4B1VZv//lws1+FaMoeu+xA==",
       "path": "microsoft.entityframeworkcore.sqlserver/3.0.1",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.3.0.1.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kDv5L/GaXWZVayLjgDRdPEORmUEa1n11dAM3rCod6MpBCJbz4/VJGdOUwjw24GGCCCmRdamVb/5pujz93fAGww==",
+      "path": "microsoft.entityframeworkcore.tools/3.0.1",
+      "hashPath": "microsoft.entityframeworkcore.tools.3.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/3.0.1": {
       "type": "package",

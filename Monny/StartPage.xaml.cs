@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using DataAccess.Entities;
+using DataAccess;
+
 namespace Monny
 {
 	/// <summary>
@@ -25,10 +28,13 @@ namespace Monny
 		{
 			InitializeComponent();
 			controller = _mainWindow;
+
 		}
 
 		private void SignIn_Click(object sender, RoutedEventArgs e)
 		{
+			//MonnyDbContext dbContext = new MonnyDbContext();
+			//List<Category> categories = dbContext.Set<Category>().ToList();
 			controller.OpenPage(MainWindow.pages.signIn);
 		}
 

@@ -27,8 +27,9 @@ namespace Monny
 		{
 			InitializeComponent();
 			OpenPage(pages.start);
-            //MonnyDbContext dbContext = new MonnyDbContext();
-            //List<Category> categories = dbContext.Set<Category>().ToList();
+			//MonnyDbContext dbContext = new MonnyDbContext();
+			//List<Category> categories = dbContext.Set<Category>().ToList();
+			//string sfsf = "dgd";
 		}
 		public enum pages
 		{

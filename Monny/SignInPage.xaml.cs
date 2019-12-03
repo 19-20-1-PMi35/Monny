@@ -21,6 +21,8 @@ namespace Monny
 	public partial class SignInPage : Page
 	{
 		private MainWindow controller;
+		private string savedPassword = "";
+		private bool doWorkPassword = true;
 		public SignInPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
@@ -29,7 +31,7 @@ namespace Monny
 		private void SignInButton_Click(object sender, RoutedEventArgs e)
 		{
 			bool checkPassed = true;
-			// Check users credentials
+			checkPassed &= App.ContainAtSign(mail.Text);
 			if (checkPassed)
 			{
 				controller.OpenPage(MainWindow.pages.home);
@@ -39,6 +41,12 @@ namespace Monny
 		private void BackButton_Click(object sender, RoutedEventArgs e)
 		{
 			controller.OpenPage(MainWindow.pages.start);
+		}
+		private void password_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			App.HideTextBoxContentBehindStarts(ref savedPassword, ref password, ref doWorkPassword);
+			password.Focus();
+			password.SelectionStart = password.Text.Length;
 		}
 	}
 }

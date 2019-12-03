@@ -40,3 +40,45 @@ C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\DataAccess\bin\Debug\netcorea
 C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.dll
 C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.pdb
 C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.exe
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.deps.json
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.runtimeconfig.json
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.runtimeconfig.dev.json
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\DataAccess.pdb
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Data.SqlClient.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Options.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Primitives.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\Microsoft.Identity.Client.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\System.Configuration.ConfigurationManager.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\System.Runtime.Caching.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\System.Security.Cryptography.ProtectedData.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\System.Security.Permissions.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\win-arm64\native\sni.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\sni.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\sni.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.csprojAssemblyReference.cache
+D:\Education\3 курс\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.AssemblyInfoInputs.cache
+D:\Education\3 курс\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.AssemblyInfo.cs
+D:\Education\3 курс\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.csproj.CopyComplete
+D:\Education\3 курс\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.dll
+D:\Education\3 курс\Monny\Monny\DataAccess\obj\Debug\netcoreapp3.0\DataAccess.pdb

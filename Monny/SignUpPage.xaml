@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="1000"
       Title="SignUp">
 
-    <Grid>
+	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition/>
 			<RowDefinition/>
@@ -23,18 +23,17 @@
 			<ColumnDefinition/>
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
-		<Label Content="Name:" FontFamily="Technical Italic" FontSize="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-		<TextBox x:Name="name" Grid.Row="0" Grid.Column="1" Height="22" TextWrapping="Wrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+		<Label Content="Name:" Grid.Row="0" Grid.Column="1" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+		<TextBox x:Name="name" Grid.Row="0" Grid.Column="1" FontFamily="Technical Italic" FontSize="15" Height="25" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" TextChanged="name_TextChanged"/>
 		<Label Content="Surname:" Grid.Row="1" Grid.Column="1" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-		<TextBox x:Name="surname" Grid.Row="1" Grid.Column="1" Height="22" TextWrapping="Wrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+		<TextBox x:Name="surname" Grid.Row="1" Grid.Column="1" FontFamily="Technical Italic" FontSize="15" Height="25" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
 		<Label Content="E-mail:" Grid.Row="2" Grid.Column="1" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-		<TextBox x:Name="mail" Grid.Row="2" Grid.Column="1" Height="22" TextWrapping="Wrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+		<TextBox x:Name="mail" Grid.Row="2" Grid.Column="1" FontFamily="Technical Italic" FontSize="15" Height="25" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
 		<Label Content="Password:" Grid.Row="3" Grid.Column="1" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-		<TextBox x:Name="password" Grid.Row="3" Grid.Column="1" Height="22" TextWrapping="Wrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+		<TextBox x:Name="password" Grid.Row="3" Grid.Column="1" FontFamily="Technical Italic" FontSize="15" Height="25" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" TextChanged="password_TextChanged"/>
 		<Label Content="Confirm password:" Grid.Row="4" Grid.Column="1" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-		<TextBox x:Name="confirmPassword" Grid.Row="4" Grid.Column="1" Height="22" TextWrapping="Wrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-		<Button Content="Sign Up" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="SignUpButton_Click"/>
-		<Button Content="Back" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="BackButton_Click"/>
-
+		<TextBox x:Name="confirmPassword" Grid.Row="4" Grid.Column="1" FontFamily="Technical Italic" FontSize="15" Height="25" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextWrapping="Wrap" TextChanged="confirmPassword_TextChanged"/>
+		<Button Content="Sign Up" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="SignUpButton_Click"/>
+		<Button Content="Back" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="BackButton_Click"/>
 	</Grid>
 </Page>

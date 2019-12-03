@@ -21,6 +21,11 @@ namespace Monny
 	public partial class SignUpPage : Page
 	{
 		private MainWindow controller;
+		private string savedPassword = "";
+		private bool doWorkPassword = true;
+
+		private string savedConfirmPassword = "";
+		private bool doWorkConfirmPassword = true;
 		public SignUpPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
@@ -29,13 +34,45 @@ namespace Monny
 
 		private void SignUpButton_Click(object sender, RoutedEventArgs e)
 		{
-			// Check password and write to db
-			controller.OpenPage(MainWindow.pages.home);
+			bool checkPassed = true;
+			// Check data and write to db:
+			checkPassed &= !App.ContainNumbers(name.Text);
+			checkPassed &= !App.ContainNumbers(surname.Text);
+			checkPassed &= App.ContainAtSign(mail.Text);
+			checkPassed &= (String.Equals(savedPassword, savedConfirmPassword) && savedPassword.Length != 0 && savedConfirmPassword.Length != 0);
+			
+			if (checkPassed)
+			{
+				MessageBox.Show("Check data succeed");
+				MessageBox.Show(savedPassword + " --- " + savedConfirmPassword);
+			}
+			else
+			{
+				MessageBox.Show("Check data failed");
+			}
 		}
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)
 		{
 			controller.OpenPage(MainWindow.pages.start);
+		}
+
+		private void password_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			App.HideTextBoxContentBehindStarts(ref savedPassword, ref password, ref doWorkPassword);
+			password.Focus();
+			password.SelectionStart = password.Text.Length;
+		}
+
+		private void confirmPassword_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			App.HideTextBoxContentBehindStarts(ref savedConfirmPassword, ref confirmPassword, ref doWorkConfirmPassword);
+			confirmPassword.Focus();
+			confirmPassword.SelectionStart = confirmPassword.Text.Length;
+		}
+
+		private void name_TextChanged(object sender, TextChangedEventArgs e)
+		{
 		}
 	}
 }
