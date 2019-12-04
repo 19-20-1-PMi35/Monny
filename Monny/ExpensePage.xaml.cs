@@ -18,53 +18,55 @@ namespace Monny
     /// </summary>
     public partial class ExpensePage : Page
     {
-        public ExpensePage()
+        private MainWindow controller;
+        public ExpensePage(MainWindow _mainWindow)
         {
             InitializeComponent();
+            controller = _mainWindow;
+            
         }
 
         private void food_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("food");
+            OpenInputWindow("Food");
         }
         private void clothes_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("clothes");
+            OpenInputWindow("Clothes");
         }
 
         private void transport_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("transport");
+            OpenInputWindow("Transport");
         }
 
         private void caffe_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("caffe");
+            OpenInputWindow("Caffe");
         }
 
         private void traveling_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("traveling");
+            OpenInputWindow("Traveling");
         }
 
         private void health_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("health");
+            OpenInputWindow("Health");
         }
 
         private void entertainments_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("entertainments");
+            OpenInputWindow("Entertainments");
         }
 
         private void other_Click(object sender, RoutedEventArgs e)
         {
-            OpenInputWindow("other");
+            OpenInputWindow("Other");
         }
-        private static void OpenInputWindow(string category)
+        private void OpenInputWindow(string category)
         {
-            InputWindow inputWindow = new InputWindow();
-            inputWindow.title.Content += category;
+            InputWindow inputWindow = new InputWindow(controller, category);
             inputWindow.Show();
         }
     }

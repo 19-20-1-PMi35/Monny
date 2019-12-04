@@ -23,11 +23,13 @@ namespace Monny
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+        public User user;
 		public MainWindow()
 		{
 			InitializeComponent();
-            OpenPage(pages.expense);
-           // OpenPage(pages.start);
+            //OpenPage(pages.expense);
+            user = new User();
+            OpenPage(pages.start);
    //         MonnyDbContext dbContext = new MonnyDbContext();
    //         List<Category> categories = dbContext.Set<Category>().ToList();
    //         string sfsf = "dgd";
@@ -53,7 +55,7 @@ namespace Monny
 			}
             else if (pages == pages.expense)
             {
-                frame.Navigate(new ExpensePage());
+                frame.Navigate(new ExpensePage(this));
             }
             else
 			{

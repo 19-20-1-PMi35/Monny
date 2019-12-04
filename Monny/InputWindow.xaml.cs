@@ -9,6 +9,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Linq;
+
+using DataAccess.Entities;
+using DataAccess;
 
 namespace Monny
 {
@@ -17,14 +21,32 @@ namespace Monny
     /// </summary>
     public partial class InputWindow : Window
     {
-        public InputWindow()
+        private MainWindow controller;
+        private readonly MonnyDbContext dbContext;
+        private string category;
+        public InputWindow(MainWindow _mainWindow, string _category)
         {
             InitializeComponent();
+            controller = _mainWindow;
+            dbContext = new MonnyDbContext();
+            title.Content += _category;
+            category = _category;
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-             
+            Category cat = dbContext.Set<Category>().ToList().Find(c => c.Name == category);
+
+            Expense expense = new Expense();
+            expense.CategoryId = cat.Id;
+            expense.AmountOfMoney = Double.Parse(price.Text);
+            expense.Date = DateTime.Now;
+            expense.UserId = controller.user.Id;
+
+            dbContext.Set<Expense>().Add(expense);
+            dbContext.SaveChanges();
+
+            this.Close();
         }
     }
 }

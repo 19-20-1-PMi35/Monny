@@ -40,18 +40,19 @@ namespace Monny
 			checkPassed &= App.ContainAtSign(mail.Text);
 			if (checkPassed)
 			{
-				//controller.OpenPage(MainWindow.pages.home);
+                //controller.OpenPage(MainWindow.pages.home);
 
-                //User user = dbContext.Set<User>().ToList().Find(u => (u.Email == mail.Text && u.Password == savedPassword));
+                User user = dbContext.Set<User>().ToList().Find(u => (u.Email == mail.Text && u.Password == savedPassword));
 
-                //if (user == null)
-                //{
-                //    MessageBox.Show("Incorrect data");
-                //}
-                //else
-                //{
+                if (user == null)
+                {
+                    MessageBox.Show("Incorrect data");
+                }
+                else
+                {
                     controller.OpenPage(MainWindow.pages.home);
-                //}
+                    controller.user = user;
+                }
             }
         }
 
