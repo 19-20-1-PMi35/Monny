@@ -37,18 +37,25 @@ namespace Monny
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            Category cat = dbContext.Set<Category>().ToList().Find(c => c.Name == category);
+			if (Double.TryParse(price.Text, out double amount))
+			{
+				Category cat = dbContext.Set<Category>().ToList().Find(c => c.Name == category);
 
-            Expense expense = new Expense();
-            expense.CategoryId = cat.Id;
-            expense.AmountOfMoney = Double.Parse(price.Text);
-            expense.Date = DateTime.Now;
-            expense.UserId = controller.user.Id;
+				Expense expense = new Expense();
+				expense.CategoryId = cat.Id;
+				expense.AmountOfMoney = Double.Parse(price.Text);
+				expense.Date = DateTime.Now;
+				expense.UserId = controller.user.Id;
 
-            dbContext.Set<Expense>().Add(expense);
-            dbContext.SaveChanges();
+				dbContext.Set<Expense>().Add(expense);
+				dbContext.SaveChanges();
 
-            this.Close();
+				this.Close();
+			}
+			else
+			{
+				MessageBox.Show("Wrong price entered");
+			}			
         }
     }
 }
