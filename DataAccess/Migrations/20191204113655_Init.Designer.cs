@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(MonnyDbContext))]
-    [Migration("20191203162702_Init")]
+    [Migration("20191204113655_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Product"
+                            Name = "Food"
                         },
                         new
                         {
@@ -65,6 +65,11 @@ namespace DataAccess.Migrations
                         {
                             Id = 6,
                             Name = "Transport"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Entertainments"
                         });
                 });
 

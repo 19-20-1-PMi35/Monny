@@ -21,17 +21,19 @@ namespace Monny
     /// </summary>
     public partial class InputWindow : Window
     {
-        private MainWindow controller;
+
         private readonly MonnyDbContext dbContext;
         private string category;
+		private MainWindow controller;
         public InputWindow(MainWindow _mainWindow, string _category)
         {
             InitializeComponent();
-            controller = _mainWindow;
+            //controller = _mainWindow;
             dbContext = new MonnyDbContext();
             title.Content += _category;
             category = _category;
-        }
+			controller = _mainWindow;
+		}
 
         private void add_Click(object sender, RoutedEventArgs e)
         {

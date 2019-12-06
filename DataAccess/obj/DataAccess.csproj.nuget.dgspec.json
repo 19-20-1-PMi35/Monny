@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {}
+    "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
+    "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\yura_\\.nuget\\packages\\",
-        "outputPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\obj\\",
+        "projectPath": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\MARIAN\\.nuget\\packages\\",
+        "outputPath": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\yura_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MARIAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using DataAccess;
+using DataAccess.Entities;
 
 namespace Monny
 {
@@ -14,6 +16,8 @@ namespace Monny
 	/// </summary>
 	public partial class App : Application
 	{
+		
+		public User user;
 		public static bool ContainNumbers(string bio)
 		{
 			return bio.Any(c => char.IsDigit(c)) && bio.Length != 0;

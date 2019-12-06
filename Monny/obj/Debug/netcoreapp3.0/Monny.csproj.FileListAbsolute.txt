@@ -118,3 +118,7 @@ C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\Monny\obj\Debug\netcoreapp3.0
 C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\ExpensePage.baml
 C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\InputWindow.g.cs
 C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\InputWindow.baml
+D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\ExpensePage.g.cs
+D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\InputWindow.g.cs
+D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\ExpensePage.baml
+D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\InputWindow.baml

@@ -48,17 +48,17 @@ namespace Monny
 			
 			if (checkPassed)
 			{
-				MessageBox.Show("Check data succeed");
-				MessageBox.Show(savedPassword + " --- " + savedConfirmPassword);
-
                 User user = new User();
                 user.Name = name.Text;
                 user.Surname = surname.Text;
                 user.Email = mail.Text;
                 user.Password = savedPassword;
 
+
                 dbContext.Set<User>().Add(user);
                 dbContext.SaveChanges();
+
+				controller.OpenPage(MainWindow.pages.home);
 			}
 			else
 			{

@@ -55,7 +55,7 @@ namespace Monny
 			}
             else if (pages == pages.expense)
             {
-                frame.Navigate(new ExpensePage(this));
+                //frame.Navigate(new ExpensePage(this));
             }
             else
 			{

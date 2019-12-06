@@ -50,8 +50,8 @@ namespace Monny
                 }
                 else
                 {
-                    controller.OpenPage(MainWindow.pages.home);
-                    controller.user = user;
+					controller.user = user;
+					controller.OpenPage(MainWindow.pages.home);
                 }
             }
         }

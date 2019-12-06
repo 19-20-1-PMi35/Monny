@@ -69,12 +69,13 @@ namespace DataAccess.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Product" },
+                    { 1, "Food" },
                     { 2, "Health" },
                     { 3, "Traveling" },
                     { 4, "Clothes" },
                     { 5, "Cafes" },
-                    { 6, "Transport" }
+                    { 6, "Transport" },
+                    { 7, "Entertainments" }
                 });
 
             migrationBuilder.CreateIndex(

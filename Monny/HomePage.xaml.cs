@@ -39,7 +39,8 @@ namespace Monny
 
         private void ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            controller.OpenPage(MainWindow.pages.expense);
+			frame.Navigate(new ExpensePage(controller));
+            //controller.OpenPage(MainWindow.pages.expense);
         }
     }
 }
