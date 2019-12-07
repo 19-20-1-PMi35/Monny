@@ -23,18 +23,15 @@ namespace Monny
 	/// </summary>
 	public partial class StartPage : Page
 	{
-		private MainWindow controller;
+		private readonly MainWindow controller;
 		public StartPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
 			controller = _mainWindow;
-
 		}
 
 		private void SignIn_Click(object sender, RoutedEventArgs e)
 		{
-			//MonnyDbContext dbContext = new MonnyDbContext();
-			//List<Category> categories = dbContext.Set<Category>().ToList();
 			controller.OpenPage(MainWindow.pages.signIn);
 		}
 

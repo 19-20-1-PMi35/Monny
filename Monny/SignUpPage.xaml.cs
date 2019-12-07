@@ -24,13 +24,14 @@ namespace Monny
 	public partial class SignUpPage : Page
 	{
 		private MainWindow controller;
+
 		private string savedPassword = "";
 		private bool doWorkPassword = true;
 
 		private string savedConfirmPassword = "";
 		private bool doWorkConfirmPassword = true;
 
-        private MonnyDbContext dbContext = new MonnyDbContext();
+        private readonly MonnyDbContext dbContext = new MonnyDbContext();
 		public SignUpPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
@@ -40,32 +41,40 @@ namespace Monny
 		private void SignUpButton_Click(object sender, RoutedEventArgs e)
 		{
 			bool checkPassed = true;
+
 			// Check data and write to db:
-			checkPassed &= !App.ContainNumbers(name.Text);
-			checkPassed &= !App.ContainNumbers(surname.Text);
-			checkPassed &= App.ContainAtSign(mail.Text);
+			checkPassed &= name.Text.Length != 0 && !App.ContainNumbers(name.Text);
+			checkPassed &= surname.Text.Length != 0 && !App.ContainNumbers(surname.Text);
+			checkPassed &= mail.Text.Length != 0 && App.ContainAtSign(mail.Text);
 			checkPassed &= (String.Equals(savedPassword, savedConfirmPassword) && savedPassword.Length != 0 && savedConfirmPassword.Length != 0);
-			
+
 			if (checkPassed)
 			{
-                User user = new User();
-                user.Name = name.Text;
-                user.Surname = surname.Text;
-                user.Email = mail.Text;
-                user.Password = savedPassword;
+				User u = dbContext.Set<User>().ToList().Find(u => (u.Email == mail.Text));
+				if (u == null)
+				{
+					User user = new User
+					{
+						Name = name.Text,
+						Surname = surname.Text,
+						Email = mail.Text,
+						Password = savedPassword
+					};
 
+					dbContext.Set<User>().Add(user);
+					dbContext.SaveChanges();
 
-                dbContext.Set<User>().Add(user);
-                dbContext.SaveChanges();
-
-				controller.OpenPage(MainWindow.pages.home);
+					controller.OpenPage(MainWindow.pages.home);
+				}
+				else
+				{
+					MessageBox.Show("User with entered email is already exist");
+				}
 			}
 			else
 			{
 				MessageBox.Show("Check data failed");
 			}
-
-            
 		}
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -85,10 +94,6 @@ namespace Monny
 			App.HideTextBoxContentBehindStarts(ref savedConfirmPassword, ref confirmPassword, ref doWorkConfirmPassword);
 			confirmPassword.Focus();
 			confirmPassword.SelectionStart = confirmPassword.Text.Length;
-		}
-
-		private void name_TextChanged(object sender, TextChangedEventArgs e)
-		{
 		}
 	}
 }

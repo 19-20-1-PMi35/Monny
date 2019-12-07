@@ -23,11 +23,12 @@ namespace Monny
 	/// </summary>
 	public partial class SignInPage : Page
 	{
-		private MainWindow controller;
+		private readonly MainWindow controller;
+
 		private string savedPassword = "";
 		private bool doWorkPassword = true;
 
-        private MonnyDbContext dbContext = new MonnyDbContext();
+        private readonly MonnyDbContext dbContext = new MonnyDbContext();
 		public SignInPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
@@ -36,12 +37,10 @@ namespace Monny
 		private void SignInButton_Click(object sender, RoutedEventArgs e)
 		{
 			bool checkPassed = true;
-            checkPassed &= password.Text.Length != 0;
-			checkPassed &= App.ContainAtSign(mail.Text);
+			checkPassed &= mail.Text.Length != 0 && App.ContainAtSign(mail.Text);
+			checkPassed &= password.Text.Length != 0;
 			if (checkPassed)
 			{
-                //controller.OpenPage(MainWindow.pages.home);
-
                 User user = dbContext.Set<User>().ToList().Find(u => (u.Email == mail.Text && u.Password == savedPassword));
 
                 if (user == null)
@@ -54,13 +53,17 @@ namespace Monny
 					controller.OpenPage(MainWindow.pages.home);
                 }
             }
+			else
+			{
+				MessageBox.Show("Incorrect data");
+			}
         }
 
 		private void BackButton_Click(object sender, RoutedEventArgs e)
 		{
 			controller.OpenPage(MainWindow.pages.start);
 		}
-		private void password_TextChanged(object sender, TextChangedEventArgs e)
+		private void Password_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			App.HideTextBoxContentBehindStarts(ref savedPassword, ref password, ref doWorkPassword);
 			password.Focus();

@@ -16,15 +16,13 @@ namespace Monny
 	/// </summary>
 	public partial class App : Application
 	{
-		
-		public User user;
 		public static bool ContainNumbers(string bio)
 		{
-			return bio.Any(c => char.IsDigit(c)) && bio.Length != 0;
+			return bio.Any(c => char.IsDigit(c));
 		}
 		public static bool ContainAtSign(string bio) // Check if mail has @ sigh
 		{
-			return bio.Contains('@') && bio.Length != 0;
+			return bio.Contains('@');
 		}
 		public static void HideTextBoxContentBehindStarts(ref string savedPassword, ref TextBox password, ref bool doWork)
 		{

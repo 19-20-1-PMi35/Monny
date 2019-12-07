@@ -26,9 +26,9 @@
 		<Label Content="E-mail:" FontFamily="Technical Italic" FontSize="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 		<TextBox x:Name="mail" Grid.Row="0" Grid.Column="1" Height="25" TextWrapping="NoWrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
 		<Label Content="Password:" Grid.Row="1" Grid.Column="1" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-		<TextBox x:Name="password" Grid.Row="1" Grid.Column="1" Height="25" TextWrapping="Wrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextChanged="password_TextChanged"/>
-		<Button Content="Sign In" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="SignInButton_Click"/>
-		<Button Content="Back" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="BackButton_Click"/>
+		<TextBox x:Name="password" Grid.Row="1" Grid.Column="1" Height="25" TextWrapping="Wrap" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextChanged="Password_TextChanged"/>
+		<Button Content="Sign In" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="SignInButton_Click" IsDefault="True"/>
+		<Button Content="Back" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Width = "100" Height = "30" Margin="60,0" Click="BackButton_Click" IsCancel="True"/>
 
 	</Grid>
 </Page>
