@@ -4892,23 +4892,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MARIAN\\.nuget\\packages\\": {},
+    "C:\\Users\\yura_\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\MARIAN\\.nuget\\packages\\",
-      "outputPath": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\obj\\",
+      "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\yura_\\.nuget\\packages\\",
+      "outputPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\MARIAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yura_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4962,7 +4962,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

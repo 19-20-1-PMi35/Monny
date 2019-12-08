@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using System.Linq;
 using DataAccess;
 using DataAccess.Entities;
+using DataAccess.Repositories;
 
 namespace Monny
 {
@@ -21,24 +22,27 @@ namespace Monny
     /// </summary>
     public partial class ExpensePage : Page
     {
-		private readonly MonnyDbContext dbContext = new MonnyDbContext();
+        private readonly ExpenseRepository expenseRepository;
 		public MainWindow controller;
 		public DateTime now = DateTime.Now;
 		public ExpensePage(MainWindow _mainWindow)
         {
             InitializeComponent();
 			controller = _mainWindow;
+            expenseRepository = new ExpenseRepository();
 
+<<<<<<< Updated upstream
+            // Set progress bar width
+            double sum = expenseRepository.GetItems().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Sum(e => e.AmountOfMoney);
+            progressBar.Value = sum;
+=======
 			// Set progress bar width
 			double sum = dbContext.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Sum(e => e.AmountOfMoney);
 			progressBar.Value = sum;
-			Expense last = dbContext.Set<Expense>().ToList().Last();
-			dbContext.Set<Expense>().ToList().Remove(last);
-			dbContext.SaveChanges();
+>>>>>>> Stashed changes
 			// need to be done: setting max value of progress bar
 			//progressBar.Maximum = ?
 		}
-
         private void Food_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Food");
@@ -47,44 +51,52 @@ namespace Monny
         {
             OpenInputWindow("Clothes");
 		}
-
         private void Transport_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Transport");
 		}
-
         private void Caffe_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Caffe");
 		}
-
         private void Traveling_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Traveling");
 		}
-
         private void Health_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Health");
 		}
-
         private void Entertainments_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Entertainments");
 		}
-
         private void Other_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Other");
         }
         private void OpenInputWindow(string category)
         {
-            InputWindow inputWindow = new InputWindow(controller, this, category);
-            inputWindow.ShowDialog();
+			if (datePicker.SelectedDate != null)
+			{
+				if (datePicker.SelectedDate.Value < DateTime.Now)
+				{
+					InputWindow inputWindow = new InputWindow(controller, this, category, datePicker.SelectedDate.Value);
+					inputWindow.ShowDialog();
+				}
+				else
+				{
+					MessageBox.Show($"Choose correct date (past or current).\r\n{datePicker.SelectedDate.Value.ToShortDateString()} was selected.\r\n{DateTime.Now.ToShortDateString()} - today.");
+				}
+			}
+			else
+			{
+				MessageBox.Show("Choose date, please.");
+			}
         }
 		public void UpdateProgressBar()
 		{
-			Expense added = dbContext.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Last();
+			Expense added = expenseRepository.GetItems().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Last();
 			progressBar.Value += added.AmountOfMoney;
 		}
     }

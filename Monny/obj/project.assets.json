@@ -5074,23 +5074,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MARIAN\\.nuget\\packages\\": {},
+    "C:\\Users\\yura_\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\Monny.csproj",
+<<<<<<< Updated upstream
+      "projectUniqueName": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj",
       "projectName": "Monny",
-      "projectPath": "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\Monny.csproj",
+      "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj",
+      "packagesPath": "C:\\Users\\yura_\\.nuget\\packages\\",
+      "outputPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\obj\\",
+=======
+      "projectUniqueName": "D:\\Education\\3 курс\\monny\\monny\\Monny\\Monny.csproj",
+      "projectName": "Monny",
+      "projectPath": "D:\\Education\\3 курс\\monny\\monny\\Monny\\Monny.csproj",
       "packagesPath": "C:\\Users\\MARIAN\\.nuget\\packages\\",
-      "outputPath": "D:\\Education\\3 курс\\Monny\\Monny\\Monny\\obj\\",
+      "outputPath": "D:\\Education\\3 курс\\monny\\monny\\Monny\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\MARIAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yura_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5103,8 +5111,13 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj"
+<<<<<<< Updated upstream
+            "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj"
+=======
+            "D:\\Education\\3 курс\\monny\\monny\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Education\\3 курс\\monny\\monny\\DataAccess\\DataAccess.csproj"
+>>>>>>> Stashed changes
             }
           }
         }
@@ -5147,7 +5160,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

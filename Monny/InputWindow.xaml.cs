@@ -13,6 +13,7 @@ using System.Linq;
 
 using DataAccess.Entities;
 using DataAccess;
+using DataAccess.Repositories;
 
 namespace Monny
 {
@@ -21,44 +22,48 @@ namespace Monny
     /// </summary>
     public partial class InputWindow : Window
     {
+		private readonly CategoryRepository categoryRepository;
+		private readonly ExpenseRepository expenseRepository;
 
-        private readonly MonnyDbContext dbContext;
         private string category;
 		private MainWindow controller;
+		private readonly DateTime date;
 		private readonly ExpensePage expensePage;
-        public InputWindow(MainWindow _mainWindow, ExpensePage _expensePage, string _category)
+        public InputWindow(MainWindow _mainWindow, ExpensePage _expensePage, string _category, DateTime _date)
         {
             InitializeComponent();
-            //controller = _mainWindow;
-            dbContext = new MonnyDbContext();
+
+			categoryRepository = new CategoryRepository();
+			expenseRepository = new ExpenseRepository();
+
             title.Content += _category;
             category = _category;
 			controller = _mainWindow;
 			expensePage = _expensePage;
+			date = _date;
 		}
 
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
 			if (Double.TryParse(price.Text, out double amount))
 			{
-				Category cat = dbContext.Set<Category>().ToList().Find(c => c.Name == category);
+				Category currentCategory = categoryRepository.GetItems().Find(c => c.Name == category);
 
 				Expense expense = new Expense();
-				expense.CategoryId = cat.Id;
+				expense.CategoryId = currentCategory.Id;
 				expense.AmountOfMoney = Double.Parse(price.Text);
-				expense.Date = DateTime.Now;
+				expense.Date = date;
 				expense.UserId = controller.user.Id;
 
-				dbContext.Set<Expense>().Add(expense);
-				dbContext.SaveChanges();
+				expenseRepository.Create(expense);
 
 				expensePage.UpdateProgressBar();
 				this.Close();
 			}
 			else
 			{
-				MessageBox.Show("Wrong price entered");
-			}			
-        }
+				MessageBox.Show("Wrong price entered.");
+			}
+		}
     }
 }

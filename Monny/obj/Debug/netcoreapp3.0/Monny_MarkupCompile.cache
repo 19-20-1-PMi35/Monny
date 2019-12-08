@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
-D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\
+<<<<<<< Updated upstream
+C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\
+=======
+D:\Education\3 курс\monny\monny\Monny\obj\Debug\netcoreapp3.0\
+>>>>>>> Stashed changes
 Monny
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
-D:\Education\3 курс\Monny\Monny\Monny\App.xaml
+<<<<<<< Updated upstream
+C:\Studying\3yearI\SoftwareEngineering\Monny\Monny\Monny\App.xaml
 7-2133382306
 
 8-2063582491
-2111948466389
+211-930449692
+=======
+D:\Education\3 курс\monny\monny\Monny\App.xaml
+7-2133382306
+
+8-2063582491
+2111466525138
+>>>>>>> Stashed changes
 ExpensePage.xaml;HomePage.xaml;InputWindow.xaml;MainWindow.xaml;SignInPage.xaml;SignUpPage.xaml;StartPage.xaml;
 
 False

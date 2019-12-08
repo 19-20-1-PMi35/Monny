@@ -27,13 +27,10 @@ namespace Monny
 		public MainWindow()
 		{
 			InitializeComponent();
-            //OpenPage(pages.expense);
-            user = new User();
-            OpenPage(pages.start);
-   //         MonnyDbContext dbContext = new MonnyDbContext();
-   //         List<Category> categories = dbContext.Set<Category>().ToList();
-   //         string sfsf = "dgd";
-        }
+			OpenPage(pages.start);
+
+			user = new User();
+		}
 		public enum pages
 		{
 			start, signIn, signUp, home, expense
