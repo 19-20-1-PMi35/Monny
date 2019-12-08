@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using DataAccess.Entities;
 using DataAccess;
+using DataAccess.Repositories;
 
 namespace Monny
 {
@@ -23,6 +24,8 @@ namespace Monny
 	/// </summary>
 	public partial class SignUpPage : Page
 	{
+		private readonly UserRepository userRepository;
+
 		private MainWindow controller;
 
 		private string savedPassword = "";
@@ -30,12 +33,12 @@ namespace Monny
 
 		private string savedConfirmPassword = "";
 		private bool doWorkConfirmPassword = true;
-
-        private readonly MonnyDbContext dbContext = new MonnyDbContext();
 		public SignUpPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
 			controller = _mainWindow;
+
+			userRepository = new UserRepository();
 		}
 
 		private void SignUpButton_Click(object sender, RoutedEventArgs e)
@@ -50,7 +53,8 @@ namespace Monny
 
 			if (checkPassed)
 			{
-				User u = dbContext.Set<User>().ToList().Find(u => (u.Email == mail.Text));
+				User u = userRepository.GetItems().Find(u => (u.Email == mail.Text));
+
 				if (u == null)
 				{
 					User user = new User
@@ -61,8 +65,7 @@ namespace Monny
 						Password = savedPassword
 					};
 
-					dbContext.Set<User>().Add(user);
-					dbContext.SaveChanges();
+					userRepository.Create(user);
 
 					controller.OpenPage(MainWindow.pages.home);
 				}
