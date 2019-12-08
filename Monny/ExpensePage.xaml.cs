@@ -32,63 +32,57 @@ namespace Monny
 			// Set progress bar width
 			double sum = dbContext.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Sum(e => e.AmountOfMoney);
 			progressBar.Value = sum;
+			Expense last = dbContext.Set<Expense>().ToList().Last();
+			dbContext.Set<Expense>().ToList().Remove(last);
+			dbContext.SaveChanges();
 			// need to be done: setting max value of progress bar
 			//progressBar.Maximum = ?
 		}
 
-        private void food_Click(object sender, RoutedEventArgs e)
+        private void Food_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Food");
-			UpdateProgressBar();
-
 		}
-        private void clothes_Click(object sender, RoutedEventArgs e)
+        private void Clothes_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Clothes");
-			UpdateProgressBar();
 		}
 
-        private void transport_Click(object sender, RoutedEventArgs e)
+        private void Transport_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Transport");
-			UpdateProgressBar();
 		}
 
-        private void caffe_Click(object sender, RoutedEventArgs e)
+        private void Caffe_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Caffe");
-			UpdateProgressBar();
 		}
 
-        private void traveling_Click(object sender, RoutedEventArgs e)
+        private void Traveling_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Traveling");
-			UpdateProgressBar();
 		}
 
-        private void health_Click(object sender, RoutedEventArgs e)
+        private void Health_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Health");
-			UpdateProgressBar();
 		}
 
-        private void entertainments_Click(object sender, RoutedEventArgs e)
+        private void Entertainments_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Entertainments");
-			UpdateProgressBar();
 		}
 
-        private void other_Click(object sender, RoutedEventArgs e)
+        private void Other_Click(object sender, RoutedEventArgs e)
         {
             OpenInputWindow("Other");
-			UpdateProgressBar();
         }
         private void OpenInputWindow(string category)
         {
-            InputWindow inputWindow = new InputWindow(controller, category);
+            InputWindow inputWindow = new InputWindow(controller, this, category);
             inputWindow.ShowDialog();
         }
-		private void UpdateProgressBar()
+		public void UpdateProgressBar()
 		{
 			Expense added = dbContext.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Last();
 			progressBar.Value += added.AmountOfMoney;

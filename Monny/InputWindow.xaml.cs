@@ -25,7 +25,8 @@ namespace Monny
         private readonly MonnyDbContext dbContext;
         private string category;
 		private MainWindow controller;
-        public InputWindow(MainWindow _mainWindow, string _category)
+		private readonly ExpensePage expensePage;
+        public InputWindow(MainWindow _mainWindow, ExpensePage _expensePage, string _category)
         {
             InitializeComponent();
             //controller = _mainWindow;
@@ -33,6 +34,7 @@ namespace Monny
             title.Content += _category;
             category = _category;
 			controller = _mainWindow;
+			expensePage = _expensePage;
 		}
 
         private void add_Click(object sender, RoutedEventArgs e)
@@ -50,6 +52,7 @@ namespace Monny
 				dbContext.Set<Expense>().Add(expense);
 				dbContext.SaveChanges();
 
+				expensePage.UpdateProgressBar();
 				this.Close();
 			}
 			else
