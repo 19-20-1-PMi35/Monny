@@ -7,7 +7,7 @@
     },
     "additionalProbingPaths": [
       "C:\\Users\\MARIAN\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\MARIAN\\.nuget\\packages",
+      "C:\\Users\\yura_\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "configProperties": {
