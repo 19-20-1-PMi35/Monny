@@ -42,5 +42,10 @@ namespace Monny
 			frame.Navigate(new ExpensePage(controller));
             //controller.OpenPage(MainWindow.pages.expense);
         }
+
+        private void ListView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            frame.Navigate(new IncomePage(controller));
+        }
     }
 }

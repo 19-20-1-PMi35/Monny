@@ -33,7 +33,7 @@
 	
 
 	<Grid Background="LightGray">
-		<Grid Background="AliceBlue" Width="960" Height="85" VerticalAlignment="Top" HorizontalAlignment="Right">
+		<Grid Background="PaleGoldenrod" Width="960" Height="85" VerticalAlignment="Top" HorizontalAlignment="Right">
 			<Label Content="I am Monny!!!" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 		</Grid>
 		<Grid x:Name="GridMenu" Width="40" HorizontalAlignment="Left" Background="#FF315AE5">
@@ -54,7 +54,7 @@
 						</StackPanel>
 					</ListViewItem>
 				</ListView>
-				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseLeftButtonUp="ListView_MouseLeftButtonUp">
 					<ListViewItem Height="60">
 						<StackPanel Orientation="Horizontal">
 							<materialDesign:PackIcon Kind="ShoppingCart" Width="25" Height="25" VerticalAlignment="Center"></materialDesign:PackIcon>
@@ -80,6 +80,6 @@
 				</ListView>
 			</StackPanel>
 		</Grid>
-		<Frame x:Name="frame" Height="515" Width="960" Margin="40,0,0,0" NavigationUIVisibility="Hidden" VerticalAlignment="Bottom"/>
+		<Frame x:Name="frame" Height="450" Width="960" Background="White" Margin="40,0,0,0" NavigationUIVisibility="Hidden" VerticalAlignment="Bottom"/>
 	</Grid>
 </Page>
