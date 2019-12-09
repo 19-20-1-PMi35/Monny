@@ -46,15 +46,15 @@
 						<materialDesign:PackIcon Margin="-16" Kind="ArrowLeft" Width="30" Height="30"/>
 					</Button>
 				</Grid>
-				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonUp="ListView_PreviewMouseLeftButtonUp">
-					<ListViewItem Height="60">
+				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseLeftButtonUp="ListView_MouseLeftButtonUp">
+					<ListViewItem Height="60" >
 						<StackPanel Orientation="Horizontal">
 							<materialDesign:PackIcon Kind="Money" Width="25" Height="25" VerticalAlignment="Center"/>
 							<TextBlock Text="Earning" VerticalAlignment="Center" Margin="20 10"/>
 						</StackPanel>
 					</ListViewItem>
 				</ListView>
-				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseLeftButtonUp="ListView_MouseLeftButtonUp">
+				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseLeftButtonUp="ListView_MouseLeftButtonUp_1">
 					<ListViewItem Height="60">
 						<StackPanel Orientation="Horizontal">
 							<materialDesign:PackIcon Kind="ShoppingCart" Width="25" Height="25" VerticalAlignment="Center"></materialDesign:PackIcon>
@@ -80,6 +80,6 @@
 				</ListView>
 			</StackPanel>
 		</Grid>
-		<Frame x:Name="frame" Height="450" Width="960" Background="White" Margin="40,0,0,0" NavigationUIVisibility="Hidden" VerticalAlignment="Bottom"/>
+		<Frame x:Name="frame" Height="515" Width="960" Background="White" Margin="40,0,0,0" NavigationUIVisibility="Hidden" VerticalAlignment="Bottom"/>
 	</Grid>
 </Page>

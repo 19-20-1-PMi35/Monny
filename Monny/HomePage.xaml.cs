@@ -37,15 +37,14 @@ namespace Monny
 			CloseMenuButton.Visibility = Visibility.Collapsed;
 		}
 
-        private void ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-			frame.Navigate(new ExpensePage(controller));
-            //controller.OpenPage(MainWindow.pages.expense);
-        }
-
         private void ListView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             frame.Navigate(new IncomePage(controller));
+        }
+
+        private void ListView_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+            frame.Navigate(new ExpensePage(controller));
         }
     }
 }
