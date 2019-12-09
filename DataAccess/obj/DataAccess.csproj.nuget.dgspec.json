@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {}
+    "D:\\Education\\3 курс\\Test\\Monny\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
+    "D:\\Education\\3 курс\\Test\\Monny\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Education\\3 курс\\Test\\Monny\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\Education\\3 курс\\Test\\Monny\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\MARIAN\\.nuget\\packages\\",
-        "outputPath": "D:\\Education\\3 курс\\Monny\\Monny\\DataAccess\\obj\\",
+        "outputPath": "D:\\Education\\3 курс\\Test\\Monny\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

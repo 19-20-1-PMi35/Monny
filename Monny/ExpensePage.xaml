@@ -22,8 +22,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="DataPicker" FontSize="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <Button x:Name="food" Width="30" Height="30" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="food_Click">
+        <Label Content="Pick date: " FontSize="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+		<DatePicker x:Name="datePicker" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Language="en-US" Focusable="False" SelectedDateFormat="Long" FirstDayOfWeek="Monday" Margin="0 0 0 10"/>
+		<Button x:Name="food" Width="30" Height="30" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Food_Click">
             <materialDesign:PackIcon Margin="-16" Kind="Tea" Width="30" Height="30"/>
         </Button>
         <Label Content="Food" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
