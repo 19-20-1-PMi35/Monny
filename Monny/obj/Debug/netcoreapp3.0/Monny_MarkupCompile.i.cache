@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\
+C:\Users\Ksy\Test\Monny\Monny\obj\Debug\netcoreapp3.0\
 Monny
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
-D:\Education\3 курс\Monny\Monny\Monny\App.xaml
+C:\Users\Ksy\Test\Monny\Monny\App.xaml
 81110213500
 
-101720553268
-2111948466389
+101623273703
+211718366419
 ExpensePage.xaml;HomePage.xaml;IncomePage.xaml;InputWindow.xaml;MainWindow.xaml;SignInPage.xaml;SignUpPage.xaml;StartPage.xaml;
 
 True
