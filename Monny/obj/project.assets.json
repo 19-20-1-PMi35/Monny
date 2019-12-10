@@ -5074,35 +5074,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ksy\\.nuget\\packages\\": {},
+    "C:\\Users\\yura_\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\Monny\\Monny.csproj",
+      "projectUniqueName": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj",
       "projectName": "Monny",
-      "projectPath": "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\Monny\\Monny.csproj",
-      "packagesPath": "C:\\Users\\Ksy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\Monny\\obj\\",
+      "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\Monny.csproj",
+      "packagesPath": "C:\\Users\\yura_\\.nuget\\packages\\",
+      "outputPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\Monny\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ksy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\yura_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\DataAccess\\DataAccess.csproj"
+            "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Studying\\3yearI\\SoftwareEngineering\\Monny\\Monny\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -5145,7 +5147,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

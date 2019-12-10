@@ -6,7 +6,7 @@
       "version": "3.0.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\Ksy\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\yura_\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Ksy\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
