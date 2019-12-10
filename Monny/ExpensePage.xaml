@@ -6,7 +6,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Monny"
       mc:Ignorable="d" 
-      d:DesignHeight="515" d:DesignWidth="960"
+      d:DesignHeight="480" d:DesignWidth="960"
       Title="ExpensePage">
 
     <Grid>
@@ -56,6 +56,6 @@
             <materialDesign:PackIcon Margin="-16" Kind="AutoAwesome" Width="30" Height="30"/>
         </Button>
         <Label Content="Other" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
-		<ProgressBar x:Name="progressBar" Height="15" Grid.Row="3" Grid.ColumnSpan="4" Width="900" HorizontalAlignment="Center" Minimum="0" Maximum="1000" VerticalAlignment="Center" Margin="0 0 10 10"/>
+		<ProgressBar x:Name="progressBar" Height="15" Grid.Row="3" Grid.ColumnSpan="4" Width="900" HorizontalAlignment="Center" Minimum="0" Maximum="1000" VerticalAlignment="Center" Margin="0 0 10 00"/>
 	</Grid>
 </Page>

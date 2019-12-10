@@ -22,7 +22,10 @@ namespace Monny
         public IncomePage(MainWindow _mainWindow)
         {
             InitializeComponent();
+
             controller = _mainWindow;
-        }
+
+			pig.Source = controller.SetImageSource("pig.png"); ;
+		}
     }
 }

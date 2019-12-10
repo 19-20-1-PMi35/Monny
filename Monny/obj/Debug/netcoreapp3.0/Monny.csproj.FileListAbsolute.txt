@@ -248,3 +248,5 @@ C:\Users\Ksy\Documents\GitHub\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\Monny.dl
 C:\Users\Ksy\Documents\GitHub\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\Monny.pdb
 C:\Users\Ksy\Documents\GitHub\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\IncomePage.g.cs
 C:\Users\Ksy\Documents\GitHub\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\IncomePage.baml
+D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\IncomePage.g.cs
+D:\Education\3 курс\Monny\Monny\Monny\obj\Debug\netcoreapp3.0\IncomePage.baml

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Monny"
       mc:Ignorable="d" 
-      d:DesignHeight="515" d:DesignWidth="960"
+      d:DesignHeight="480" d:DesignWidth="960"
       Title="IncomePage">
 
     <Grid>
@@ -40,8 +40,8 @@
         <ProgressBar Grid.Row="2" Grid.Column="0" Height="20" Width="200"/>
         <ProgressBar Grid.Row="2" Grid.Column="1" Height="20" Width="200"/>
         <TextBox Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" Text="Total income : "  TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
-       
-        <Image Grid.Row="3" Grid.Column="1" Source="C:\Users\Ksy\Documents\GitHub\Monny\Monny\Monny\Images\pig.png" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="0,0,0,35"/>
+
+		<Image x:Name="pig" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
