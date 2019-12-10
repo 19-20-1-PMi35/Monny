@@ -1,0 +1,27 @@
+﻿<Page x:Class="Monny.DreamPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Monny"
+      mc:Ignorable="d" 
+     d:DesignHeight="480" d:DesignWidth="960"
+      Title="DreamPage">
+
+
+    <Grid Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="dreamNamePage" Content="Назва мрії" FontFamily="Technical Italic" FontSize="50" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button x:Name="AddDreamButton" Content="Add" Width="60" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="add_Dream_Click">
+            </Button>
+
+            <ProgressBar Margin="0,-50,0,0" Name="ProgressBar" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100" Value="50" Height="45" Grid.ColumnSpan="3"  />
+            <TextBlock Margin="0,-50,0,0" Grid.Column="0" Grid.Row="1" Text="{Binding ElementName=ProgressBar, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Label x:Name="Phrase" Margin="0,-100,0,0" Content="Цитатки" FontFamily="Technical Italic" FontSize="30" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+
+</Page>
