@@ -44,18 +44,21 @@ namespace Monny
             InitializeComponent();
             controller = _mainWindow;
             pig.Source = controller.SetImageSource("pig.png");
-             var temp = database_variable.Set<Income>().ToList();
+          
             // double sum = from t in temp
             //             where (t.UserId == controller.user.Id) && (t.Date.Month == now.Month).Sum(l => l.MoneyCount);
             //               temp.Sum(t => t.MoneyCount);
-            double asum = temp.Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month && e.CategoryCheck == 1)).Sum(e => e.MoneyCount);
-            double psum = temp.Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month && e.CategoryCheck == 2)).Sum(e => e.MoneyCount);
-
+            double asum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 1)).Sum(e => e.MoneyCount);
+            double psum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 2)).Sum(e => e.MoneyCount);
             progressBar.Value = asum;
             progressBar2.Value = psum;
+           
+
+            active.Content = asum;
+            passive.Content = psum;
+            total.Content = asum + psum;
             this.DataContext = this;
           
-
         }
         
         private void OnSalary(object sender, MouseButtonEventArgs e)
@@ -105,23 +108,26 @@ namespace Monny
             //    MessageBox.Show("Choose month, please.");
             //}
         }
-        public void ShowResult()
+        public void ShowResult(double money, int? catcheck)
         {
-            Income user_income_written = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Last();
-         
-            if (user_income_written.CategoryCheck == 1)
+            double user_income_written = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Sum(e => e.MoneyCount);
+
+            if (catcheck == 1)
             {
-                active_sum += user_income_written.MoneyCount;
-                progressBar.Value += user_income_written.MoneyCount;
+                active_sum += money;
+                progressBar.Value += money;
             }
-            if (user_income_written.CategoryCheck == 2)
+            if (catcheck == 2)
             {
-                passive_sum += user_income_written.MoneyCount;
-                progressBar2.Value += user_income_written.MoneyCount;
+                passive_sum += money;
+                progressBar2.Value += money;
             }
 
-            total_sum += user_income_written.MoneyCount;
-
+            total_sum += money;
+            active.Content = active_sum.ToString();
+            passive.Content = passive_sum.ToString();
+            total.Content = total_sum.ToString();
+           // MessageBox.Show(active_sum.ToString()+passive_sum.ToString()+total_sum.ToString());
         }
        
 

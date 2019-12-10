@@ -40,7 +40,7 @@ namespace Monny
             {
                 Category categ = database_variable.Set<Category>().ToList().Find(a => a.Name == category);
                 Income new_income = new Income();
-                
+      
                 new_income.CategoryId = categ.Id;
                 new_income.MoneyCount = Double.Parse(price.Text);
                 new_income.Date = date;
@@ -50,7 +50,7 @@ namespace Monny
 
                 database_variable.Set<Income>().Add(new_income);
                 database_variable.SaveChanges();
-                incomePage.ShowResult();
+                incomePage.ShowResult(new_income.MoneyCount, new_income.CategoryCheck);
                 this.Close();
                 
             }
