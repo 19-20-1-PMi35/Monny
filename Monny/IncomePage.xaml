@@ -46,14 +46,28 @@
         Stroke="Gray" StrokeDashCap="Round" Margin="173,5,167,95" />
         <ProgressBar x:Name="progressBar2"  Grid.Row="2" Grid.Column="1" Height="20" Width="120" Minimum="0" Maximum="100000" Margin="0,40,0,0"/>
 
-            
+
         <Label Content="Total budget :"  Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold"/>
         <TextBlock Grid.Row="3" Grid.Column="0" Text="{Binding Path=Passive, UpdateSourceTrigger=PropertyChanged}" />
         <Label x:Name="active" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold" Margin="0,0,0,20" />
         <Label x:Name="passive" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold" Margin="0,0,0,20" />
         <Label x:Name="total" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold" Margin="0,0,75,0" />
 
-        <Image x:Name="pig" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
+        <Image x:Name="pig" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" MouseLeftButtonUp="pig_MouseLeftButtonUp"/>
+        <ComboBox Grid.Row="0" Grid.ColumnSpan="2" Name="Months" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="332,25,0,0" Height="25" Width="278" SelectionChanged="ComboBox_Selected">
+            <TextBlock>January</TextBlock>
+            <TextBlock>February</TextBlock>
+            <TextBlock>March</TextBlock>
+            <TextBlock>April</TextBlock>
+            <TextBlock>May</TextBlock>
+            <TextBlock>June</TextBlock>
+            <TextBlock>July</TextBlock>
+            <TextBlock>August</TextBlock>
+            <TextBlock>September</TextBlock>
+            <TextBlock>October</TextBlock>
+            <TextBlock>November</TextBlock>
+            <TextBlock>December</TextBlock>
+     
+        </ComboBox>
     </Grid>
 </Page>

@@ -25,14 +25,14 @@ namespace Monny
         private MainWindow controller;
         private readonly DateTime date;
         private readonly IncomePage incomePage;
-        public AddIncomeWindow(MainWindow _mainWindow, IncomePage _incomePage, string _category) //, DateTime _date)
+        public AddIncomeWindow(MainWindow _mainWindow, IncomePage _incomePage, string _category)
         {
             InitializeComponent();
             title.Content += _category;
             category = _category;
             controller = _mainWindow;
             incomePage = _incomePage;
-            //date = _date;
+           // date = _date;
         }
         private void Add_Income_Click(object sender, RoutedEventArgs e)
         {
