@@ -12,7 +12,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Linq;
 using System.Threading.Tasks;
-
+using DataAccess;
+using DataAccess.Entities;
 
 namespace Monny
 {
@@ -25,11 +26,14 @@ namespace Monny
 		public string dreamName;
 		public double dreamPrice;
 		private string[] phrases;
+		private MonnyDbContext dbContext;
 
 		public DreamPage(MainWindow _mainWindow)
 		{
+			
 			InitializeComponent();
 			controller = _mainWindow;
+			dbContext = new MonnyDbContext();
 
 			phrases = new string[13];
 			phrases[0] = "Гроші — це свято, яке зажди з тобою.";
@@ -46,6 +50,14 @@ namespace Monny
 			phrases[11] = " Важливо не те, скільки грошей ви заробляєте, а те, \n скільки грошей у вас залишається, як вони працюють на вас, \n і скільки поколінь ви зможете ними забезпечити.";
 			phrases[12] = "Не варто говорити про гроші з людьми, які їх мають набагато більше, або набагато менше.";
 			generatePhrase();
+
+			Dream dreamCheck=dbContext.Set<Dream>().ToList().Find(d => d.UserId == controller.user.Id);
+			if(dreamCheck!=null)
+			{
+				dreamNamePage.Content = dreamCheck.Name;
+				dreamNamePage.Content = dreamNamePage.Content + " " + dreamCheck.Price.ToString();
+				UpdateProgressBar();
+			}
 		}
 
 		private void generatePhrase()
@@ -63,6 +75,22 @@ namespace Monny
 		}
 
 
+		public void UpdateProgressBar()
+		{
+
+			double totalExpance = dbContext.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id)).Sum(e => e.AmountOfMoney);
+			double totalIncome = dbContext.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id)).Sum(e => e.MoneyCount);
+			double difference = (totalIncome - totalExpance);
+			if (difference >= 0)
+			{
+				ProgressBar.Value = difference / 100;
+			}
+			else 
+			{
+				ProgressBar.Value = 0;
+			}
+
+		}
 
 		/*
 		 метод

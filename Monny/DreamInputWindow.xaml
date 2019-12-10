@@ -13,8 +13,8 @@
             <RowDefinition></RowDefinition>
 
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="0" Name="MyTextBox" Background="Azure"/>
-        <TextBox Grid.Row="1" Name="MyTextBox2" Background="Azure"/>
+        <TextBox Grid.Row="0" x:Name="DreamName" Background="Azure"/>
+        <TextBox Grid.Row="1" x:Name="DreamPrice" Background="Azure"/>
         <Button Content="Change dream" Width="150" Height="30" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="add_Click">
         </Button>
 
