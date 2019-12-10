@@ -30,18 +30,8 @@ namespace Monny
         public DateTime now = DateTime.Now;
         private double asum = 0;
         private double psum = 0;
-        public int? month_id = 0;
-        public string passiv
-        {
-            get { return (string)GetValue(DebtProperty); }
-            set { SetValue(DebtProperty, passive_sum); }
-        }
-
-
-        public static readonly DependencyProperty DebtProperty =
-            DependencyProperty.Register("Passive", typeof(string), typeof(IncomePage), new PropertyMetadata(string.Empty));
-
-
+        public int month_id = 0;
+        
         public IncomePage(MainWindow _mainWindow)
         {
             InitializeComponent();
@@ -51,8 +41,8 @@ namespace Monny
             // double sum = from t in temp
             //             where (t.UserId == controller.user.Id) && (t.Date.Month == now.Month).Sum(l => l.MoneyCount);
             //               temp.Sum(t => t.MoneyCount);
-            asum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 1 )).Sum(e => e.MoneyCount);
-            psum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 2)).Sum(e => e.MoneyCount);
+            asum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 1 && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
+            psum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 2 && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
             progressBar.Value = asum;
             progressBar2.Value = psum;
            
@@ -89,6 +79,11 @@ namespace Monny
             AddIncome("Shares");
         }
 
+        private void ComboBox_Selected(object sender, RoutedEventArgs e)
+        {
+            month_id = Months.SelectedIndex;
+            month_id++;
+        }
         private void AddIncome(string category)
         {
             /*if (month_id != null)
@@ -96,7 +91,7 @@ namespace Monny
                 if (month_id < System.DateTime.Now.Month)
                 {*/
 
-                    AddIncomeWindow new_form = new AddIncomeWindow(controller, this, category);
+                    AddIncomeWindow new_form = new AddIncomeWindow(controller, this, category, month_id);
                     new_form.ShowDialog();
                /* }
                 else
@@ -106,65 +101,10 @@ namespace Monny
             }*/
       
         }
-        /*private void ComboBox_Selected(object sender, RoutedEventArgs e)
-        {
-            ComboBox comboBox = (ComboBox)sender;
-            // ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
-            string comboText = comboBox.Text;
-           // string message = ((ComboBoxItem)comboBox.SelectedItem).Content.ToString();
-            if (comboText == "January")
-            {
-                month_id = 1;
-            }
-            if (comboText == "February")
-            {
-                month_id = 2;
-            }
-            if (comboText == "March")
-            {
-                month_id = 3;
-            }
-            if (comboText == "April")
-            {
-                month_id = 4;
-            }
-            if (comboText == "May")
-            {
-                month_id = 5;
-            }
-            if (comboText == "June")
-            {
-                month_id = 6;
-            }
-            if (comboText == "July")
-            {
-                month_id = 7;
-            }
-            if (comboText == "August")
-            {
-                month_id = 8;
-            }
-            if (comboText == "September")
-            {
-                month_id = 9;
-            }
-            if (comboText == "October")
-            {
-                month_id = 10;
-            }
-            if (comboText == "November")
-            {
-                month_id = 11;
-            }
-            if (comboText == "December")
-            {
-                month_id = 12;
-            }
-           
-        }*/
+        
         public void ShowResult(double money, int? catcheck)
         {
-            double user_income_written = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id)).Sum(e => e.MoneyCount);
+            double user_income_written = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
 
             if (catcheck == 1)
             {
@@ -187,8 +127,8 @@ namespace Monny
         private void pig_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
 
-           double expenses_suma = database_variable.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id)).Sum(e => e.AmountOfMoney);
-           double incomes_suma = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id)).Sum(e => e.MoneyCount);
+           double expenses_suma = database_variable.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == month_id)).Sum(e => e.AmountOfMoney);
+           double incomes_suma = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
 
          
             if (incomes_suma > expenses_suma)

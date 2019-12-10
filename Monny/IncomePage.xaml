@@ -48,12 +48,24 @@
 
 
         <Label Content="Total budget :"  Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="{Binding Path=Passive, UpdateSourceTrigger=PropertyChanged}" />
         <Label x:Name="active" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold" Margin="0,0,0,20" />
         <Label x:Name="passive" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold" Margin="0,0,0,20" />
         <Label x:Name="total" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold" Margin="0,0,75,0" />
 
         <Image x:Name="pig" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" MouseLeftButtonUp="pig_MouseLeftButtonUp"/>
-      
+        <ComboBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="Months" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="300" SelectionChanged="ComboBox_Selected">
+            <ComboBoxItem>January</ComboBoxItem>
+            <ComboBoxItem>February</ComboBoxItem>
+            <ComboBoxItem>March</ComboBoxItem>
+            <ComboBoxItem>April</ComboBoxItem>
+            <ComboBoxItem>May</ComboBoxItem>
+            <ComboBoxItem>June</ComboBoxItem>
+            <ComboBoxItem>July</ComboBoxItem>
+            <ComboBoxItem>August</ComboBoxItem>
+            <ComboBoxItem>September</ComboBoxItem>
+            <ComboBoxItem>October</ComboBoxItem>
+            <ComboBoxItem>November</ComboBoxItem>
+            <ComboBoxItem>December</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Page>
