@@ -28,6 +28,8 @@ namespace Monny
         public double passive_sum = 0;
         public double total_sum = 0;
         public DateTime now = DateTime.Now;
+        private double asum = 0;
+        private double psum = 0;
         public string passiv
         {
             get { return (string)GetValue(DebtProperty); }
@@ -48,8 +50,8 @@ namespace Monny
             // double sum = from t in temp
             //             where (t.UserId == controller.user.Id) && (t.Date.Month == now.Month).Sum(l => l.MoneyCount);
             //               temp.Sum(t => t.MoneyCount);
-            double asum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 1)).Sum(e => e.MoneyCount);
-            double psum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 2)).Sum(e => e.MoneyCount);
+            asum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 1)).Sum(e => e.MoneyCount);
+            psum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 2)).Sum(e => e.MoneyCount);
             progressBar.Value = asum;
             progressBar2.Value = psum;
            
@@ -114,16 +116,16 @@ namespace Monny
 
             if (catcheck == 1)
             {
-                active_sum += money;
-                progressBar.Value += money;
+                active_sum = asum + money;
+                progressBar.Value = asum + money;
             }
             if (catcheck == 2)
             {
-                passive_sum += money;
-                progressBar2.Value += money;
+                passive_sum = psum + money;
+                progressBar2.Value = psum + money;
             }
 
-            total_sum += money;
+            total_sum = active_sum + passive_sum;
             active.Content = active_sum.ToString();
             passive.Content = passive_sum.ToString();
             total.Content = total_sum.ToString();
