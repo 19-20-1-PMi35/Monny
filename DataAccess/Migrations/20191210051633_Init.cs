@@ -13,7 +13,8 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
+                    CategoryType = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,18 +65,53 @@ namespace DataAccess.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Incomes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<DateTime>(nullable: false),
+                    MoneyCount = table.Column<double>(nullable: false),
+                    CategoryCheck = table.Column<int>(nullable: true),
+                    CategoryId = table.Column<int>(nullable: false),
+                    UserId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Incomes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Incomes_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Incomes_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "Id", "Name" },
+                columns: new[] { "Id", "CategoryType", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Food" },
-                    { 2, "Health" },
-                    { 3, "Traveling" },
-                    { 4, "Clothes" },
-                    { 5, "Cafes" },
-                    { 6, "Transport" },
-                    { 7, "Entertainments" }
+                    { 1, null, "Food" },
+                    { 2, null, "Health" },
+                    { 3, null, "Traveling" },
+                    { 4, null, "Clothes" },
+                    { 5, null, "Cafes" },
+                    { 6, null, "Transport" },
+                    { 7, null, "Entertainments" },
+                    { 8, 1, "Salary" },
+                    { 9, 1, "Scholarship" },
+                    { 10, 1, "Retirement" },
+                    { 11, 2, "Rent" },
+                    { 12, 2, "Part-time job" },
+                    { 13, 2, "Shares" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -87,12 +123,25 @@ namespace DataAccess.Migrations
                 name: "IX_Expenses_UserId",
                 table: "Expenses",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Incomes_CategoryId",
+                table: "Incomes",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Incomes_UserId",
+                table: "Incomes",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Expenses");
+
+            migrationBuilder.DropTable(
+                name: "Incomes");
 
             migrationBuilder.DropTable(
                 name: "Categories");

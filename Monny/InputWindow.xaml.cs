@@ -25,8 +25,9 @@ namespace Monny
         private readonly MonnyDbContext dbContext;
         private string category;
 		private MainWindow controller;
+		private readonly DateTime date;
 		private readonly ExpensePage expensePage;
-        public InputWindow(MainWindow _mainWindow, ExpensePage _expensePage, string _category)
+        public InputWindow(MainWindow _mainWindow, ExpensePage _expensePage, string _category, DateTime _date)
         {
             InitializeComponent();
             //controller = _mainWindow;
@@ -35,9 +36,10 @@ namespace Monny
             category = _category;
 			controller = _mainWindow;
 			expensePage = _expensePage;
+			date = _date;
 		}
 
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
 			if (Double.TryParse(price.Text, out double amount))
 			{
@@ -46,7 +48,7 @@ namespace Monny
 				Expense expense = new Expense();
 				expense.CategoryId = cat.Id;
 				expense.AmountOfMoney = Double.Parse(price.Text);
-				expense.Date = DateTime.Now;
+				expense.Date = date;
 				expense.UserId = controller.user.Id;
 
 				dbContext.Set<Expense>().Add(expense);

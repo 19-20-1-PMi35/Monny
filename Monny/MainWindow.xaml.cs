@@ -29,7 +29,7 @@ namespace Monny
 			InitializeComponent();
             //OpenPage(pages.expense);
             user = new User();
-            OpenPage(pages.start);
+			OpenPage(pages.start);
    //         MonnyDbContext dbContext = new MonnyDbContext();
    //         List<Category> categories = dbContext.Set<Category>().ToList();
    //         string sfsf = "dgd";
@@ -61,6 +61,15 @@ namespace Monny
 			{
 				frame.Navigate(new StartPage(this));
 			}
+		}
+		public BitmapImage SetImageSource(string imageName)
+		{
+			string baseProjectDirectory = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\"));
+			BitmapImage bitmap = new BitmapImage();
+			bitmap.BeginInit();
+			bitmap.UriSource = new Uri(System.IO.Path.Combine(baseProjectDirectory, "Images", imageName));
+			bitmap.EndInit();
+			return bitmap;
 		}
 	}
 }

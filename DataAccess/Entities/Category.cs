@@ -9,7 +9,8 @@ namespace DataAccess.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public int? CategoryType { get; set; }
         public List<Expense> Expenses { get; set; }
+        public List<Income> Incomes { get; set; }
     }
 }

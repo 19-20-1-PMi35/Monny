@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 using DataAccess.Entities;
 using DataAccess;
@@ -27,7 +28,10 @@ namespace Monny
 		public StartPage(MainWindow _mainWindow)
 		{
 			InitializeComponent();
+
 			controller = _mainWindow;
+
+			logo.Source = controller.SetImageSource("logo.png");
 		}
 
 		private void SignIn_Click(object sender, RoutedEventArgs e)

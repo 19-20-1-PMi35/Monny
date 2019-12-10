@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(MonnyDbContext))]
-    [Migration("20191204113655_Init")]
+    [Migration("20191210051633_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,9 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoryType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -70,6 +73,42 @@ namespace DataAccess.Migrations
                         {
                             Id = 7,
                             Name = "Entertainments"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryType = 1,
+                            Name = "Salary"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryType = 1,
+                            Name = "Scholarship"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryType = 1,
+                            Name = "Retirement"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryType = 2,
+                            Name = "Rent"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryType = 2,
+                            Name = "Part-time job"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryType = 2,
+                            Name = "Shares"
                         });
                 });
 
@@ -99,6 +138,37 @@ namespace DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Expenses");
+                });
+
+            modelBuilder.Entity("DataAccess.Entities.Income", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CategoryCheck")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("MoneyCount")
+                        .HasColumnType("float");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Incomes");
                 });
 
             modelBuilder.Entity("DataAccess.Entities.User", b =>
@@ -135,6 +205,21 @@ namespace DataAccess.Migrations
 
                     b.HasOne("DataAccess.Entities.User", "User")
                         .WithMany("Expenses")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DataAccess.Entities.Income", b =>
+                {
+                    b.HasOne("DataAccess.Entities.Category", "Category")
+                        .WithMany("Incomes")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Entities.User", "User")
+                        .WithMany("Incomes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

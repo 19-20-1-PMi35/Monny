@@ -14,5 +14,6 @@ namespace DataAccess.Entities
         public string Password { get; set; }
 
         public List<Expense> Expenses { get; set; }
+        public List<Income> Incomes { get; set; }
     }
 }
