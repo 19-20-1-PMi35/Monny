@@ -25,7 +25,8 @@ namespace Monny
 		{
 			InitializeComponent();
 			controller = _mainWindow;
-		}
+            monny1.Source = controller.SetImageSource("banner3.png");
+        }
 		private void OpenMenuButton_Click(object sender, RoutedEventArgs e)
 		{
 			OpenMenuButton.Visibility = Visibility.Collapsed;
