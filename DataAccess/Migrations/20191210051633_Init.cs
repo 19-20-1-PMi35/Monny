@@ -73,6 +73,7 @@ namespace DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(nullable: false),
                     MoneyCount = table.Column<double>(nullable: false),
+                    CategoryCheck = table.Column<int>(nullable: true),
                     CategoryId = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
                 },

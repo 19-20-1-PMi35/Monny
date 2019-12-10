@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ksy\\Test\\Monny\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ksy\\Test\\Monny\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ksy\\Test\\Monny\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Ksy\\Test\\Monny\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Ksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ksy\\Test\\Monny\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Ksy\\Documents\\GitHub\\NewMonny\\Monny\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

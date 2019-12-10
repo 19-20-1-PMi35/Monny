@@ -24,24 +24,33 @@
 
         <ListBox Grid.Row="1" Grid.Column="0" FontFamily="Arial Rounded MT Bold" FontSize="16"  HorizontalAlignment="Center" >
 
-            <ListBoxItem>&#x25CF; Salary</ListBoxItem>
-            <ListBoxItem>&#x25CF; Scholarship</ListBoxItem>
-            <ListBoxItem>&#x25CF; Retirement</ListBoxItem>
+            <ListBoxItem MouseLeftButtonUp="OnSalary">&#x25CF; Salary</ListBoxItem>
+            <ListBoxItem MouseLeftButtonUp="OnScholarship">&#x25CF; Scholarship</ListBoxItem>
+            <ListBoxItem MouseLeftButtonUp="OnRetirement">&#x25CF; Retirement</ListBoxItem>
 
         </ListBox>
 
         <ListBox Grid.Row="1" Grid.Column="1" FontFamily="Arial Rounded MT Bold" FontSize="16"  HorizontalAlignment="Center" >
 
-            <ListBoxItem>&#x25CF; Part-time job</ListBoxItem>
-            <ListBoxItem >&#x25CF; Rent</ListBoxItem>
-            <ListBoxItem >&#x25CF; Shares</ListBoxItem>
+            <ListBoxItem MouseLeftButtonUp="OnPartTimeJob">&#x25CF; Part-time job</ListBoxItem>
+            <ListBoxItem MouseLeftButtonUp="OnRent">&#x25CF; Rent</ListBoxItem>
+            <ListBoxItem MouseLeftButtonUp="OnShares">&#x25CF; Shares</ListBoxItem>
 
         </ListBox>
-        <ProgressBar Grid.Row="2" Grid.Column="0" Height="20" Width="200"/>
-        <ProgressBar Grid.Row="2" Grid.Column="1" Height="20" Width="200"/>
-        <TextBox Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" Text="Total income : "  TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
+        <Ellipse Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  Width="140" Height="140" Fill="LightPink"
+        StrokeThickness="5" StrokeDashArray="4 2"
+        Stroke="Gray" StrokeDashCap="Round" Margin="173,5,167,95" />
+        <ProgressBar x:Name="progressBar" Grid.Row="2" Grid.Column="0" Height="20" Width="120" Margin="0,40,0,0"/>
+        <Ellipse Grid.Row="2" Grid.RowSpan="2" Grid.Column="1"  Width="140" Height="140" Fill="LightPink"
+        StrokeThickness="5" StrokeDashArray="4 2"
+        Stroke="Gray" StrokeDashCap="Round" Margin="173,5,167,95" />
+        <ProgressBar x:Name="progressBar2"  Grid.Row="2" Grid.Column="1" Height="20" Width="120" Minimum="0" Maximum="100000" Margin="0,40,0,0"/>
 
-		<Image x:Name="pig" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <Label Content="Total budget :"  Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="24" Cursor="Arrow" FontWeight="Bold"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{Binding Path=Passive, UpdateSourceTrigger=PropertyChanged}" />
+      
+        <Image x:Name="pig" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
