@@ -17,7 +17,7 @@ using DataAccess;
 namespace Monny
 {
     /// <summary>
-    /// Interaction logic for InputWindow.xaml
+    /// Logic for InputWindow.xaml
     /// </summary>
     public partial class DreamInputWindow : Window
     {
@@ -25,6 +25,9 @@ namespace Monny
         private DreamPage dreamPage;
         private MonnyDbContext dbContext;
 
+        /// <summary>
+        /// Show input window
+        /// </summary>
         public DreamInputWindow(MainWindow _mainWindow, DreamPage _dreamPage)
         {
             InitializeComponent();
@@ -34,6 +37,9 @@ namespace Monny
 
         }
 
+        /// <summary>
+        /// Logic for button (save new dream in database and on dream page)
+        /// </summary>
         private void add_Click(object sender, RoutedEventArgs e)
         {
                 if (dbContext.Set<Dream>().Where(d => d.UserId == controller.user.Id).ToList().Count != 0)
