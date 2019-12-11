@@ -47,7 +47,7 @@ namespace Monny
 				dbContext.SaveChanges();
 
 				// Updating progress bar
-				expensePage.UpdateProgressBar(amount, date);
+				expensePage.SetProgressBar(date);
 				this.Close();
 			}
 			else

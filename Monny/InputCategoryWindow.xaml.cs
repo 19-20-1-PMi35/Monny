@@ -75,7 +75,7 @@ namespace Monny
 					repository.Create(expense);
 
 					// Updating progress bar
-					expensePage.UpdateProgressBar(amount, date);
+					expensePage.SetProgressBar(date);
 					this.Close();
 				}
 				else
@@ -135,7 +135,7 @@ namespace Monny
 				mainText.Text = "";
 				// Updating ComboBox Items
 				UpdateComboBox(customCategory.Name);
-
+				
 				// Change UI to default
 				Cancel_Click(sender, e);
 			}

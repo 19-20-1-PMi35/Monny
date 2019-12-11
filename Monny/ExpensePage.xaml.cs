@@ -99,6 +99,7 @@ namespace Monny
 					// Open help input window
 					InputWindow inputWindow = new InputWindow(controller, this, category, datePicker.SelectedDate.Value);
 					inputWindow.ShowDialog();
+
 				}
 				else
 				{
@@ -137,9 +138,12 @@ namespace Monny
 		/// <param name="selectedDate"></param>
 		public void UpdateProgressBar(double lastAddedPrice, DateTime selectedDate)
 		{
-			if (selectedDate < DateTime.Now)
+			if (selectedDate <= DateTime.Now)
 			{
-				progressBar.Value += lastAddedPrice;
+				MessageBox.Show("Updated" + " = ==== " + lastAddedPrice.ToString());
+				progressBar.Value = Math.Round(lastAddedPrice);
+				MessageBox.Show("Set" + " = ==== " + progressBar.Value.ToString());
+				CheckProgressBarStatus(progressBar.Value, progressBar.Maximum);
 			}
 			else
 			{
