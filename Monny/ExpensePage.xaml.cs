@@ -65,7 +65,22 @@ namespace Monny
 		}
 		private void Other_Click(object sender, RoutedEventArgs e)
 		{
-			OpenInputWindow("Other");
+			if (datePicker.SelectedDate != null)
+			{
+				if (datePicker.SelectedDate.Value < DateTime.Now)
+				{
+					InputCategoryWindow inputCategoryWindow = new InputCategoryWindow(controller, this, datePicker.SelectedDate.Value);
+					inputCategoryWindow.ShowDialog();
+				}
+				else
+				{
+					MessageBox.Show($"Choose correct date (past or current).\r\n{datePicker.SelectedDate.Value.ToShortDateString()} was selected.\r\n{DateTime.Now.ToShortDateString()} - today.");
+				}
+			}
+			else
+			{
+				MessageBox.Show("Choose date, please.");
+			}
 		}
 		private void OpenInputWindow(string category)
 		{
@@ -86,10 +101,12 @@ namespace Monny
 				MessageBox.Show("Choose date, please.");
 			}
 		}
-		public void UpdateProgressBar()
+		public void UpdateProgressBar(double lastAddedPrice, DateTime selectedDate)
 		{
-			Expense added = dbContext.Set<Expense>().ToList().Where(e => (e.UserId == controller.user.Id && e.Date.Month == now.Month)).Last();
-			progressBar.Value += added.AmountOfMoney;
+			if (selectedDate.Month == DateTime.Now.Month && selectedDate.Year == DateTime.Now.Year)
+			{
+				progressBar.Value += lastAddedPrice;
+			}
 		}
 	}
 }
