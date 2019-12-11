@@ -36,28 +36,32 @@ namespace Monny
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            dreamPage.dreamName = DreamName.Text;
-            dreamPage.dreamPrice = Double.Parse(DreamPrice.Text);
-            dreamPage.dreamNameLabel.Content = dreamPage.dreamName + " " + dreamPage.dreamPrice;
+                if (dbContext.Set<Dream>().Where(d => d.UserId == controller.user.Id).ToList().Count != 0)
+                {
+                    dbContext.Set<Dream>().RemoveRange(dbContext.Set<Dream>().Where(d => d.UserId == controller.user.Id));
+                }
+                dreamPage.dreamName = DreamName.Text;
+                dreamPage.dreamPrice = Double.Parse(DreamPrice.Text);
+                dreamPage.dreamNameLabel.Content = dreamPage.dreamName + " " + dreamPage.dreamPrice;
 
-            if (Double.TryParse(DreamPrice.Text, out double amount))
-            {
-                Dream dream = new Dream();
-                dream.UserId = controller.user.Id;
-                dream.Name = DreamName.Text;
-                dream.Price = amount;
+                if (Double.TryParse(DreamPrice.Text, out double amount))
+                {
+                    Dream dream = new Dream();
+                    dream.UserId = controller.user.Id;
+                    dream.Name = DreamName.Text;
+                    dream.Price = amount;
 
-                dbContext.Set<Dream>().Add(dream);
-                dbContext.SaveChanges();
+                    dbContext.Set<Dream>().Add(dream);
+                    dbContext.SaveChanges();
 
-                dreamPage.UpdateProgressBar();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Wrong price entered");
-            }
-
+                    dreamPage.UpdateProgressBar();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong price entered");
+                }
+            
         }
 
 

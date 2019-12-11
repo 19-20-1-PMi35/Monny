@@ -37,14 +37,14 @@ namespace Monny
 
 			phrases = new string[13];
 			phrases[0] = "The best things in life are free.";
-			phrases[1] = "There are things more important than money, but you don't buy them without money.";
+			phrases[1] = "There are things more important than money, \n but you don't buy them without money.";
 			phrases[2] = "Money is a holiday that is always with you.";
 			phrases[3] = "Money doesn't grow on trees.";
 			phrases[4] = "The happiness is in the purchases rather than the actual money";
 			phrases[5] = "Wealth is the ability to spend less than you earn.";
 			phrases[6] = "Wealth is the ability to invest.";
-			phrases[7] = "A rich one is not the one who earns a lot, rather the one who spends a little";
-			phrases[8] = "The poor is not the one who has no money but the one who has no dream.";
+			phrases[7] = "A rich one is not the one who earns a lot, \n rather the one who spends a little";
+			phrases[8] = "The poor is not the one who has no money \n but the one who has no dream.";
 			phrases[9] = " The ability to properly manage money is one of \n the main qualities of rich people.";
 			phrases[10] = " Wealth does not come from desires. \n It comes from a thoughtful plan of action and from hard work.";
 			phrases[11] = "You shouldnt bring the topic of money, \n with people who earn either much more or much less";
@@ -58,7 +58,7 @@ namespace Monny
 						{ 
 								dreamNameLabel.Content = dreamCheck.Name;
 								dreamNameLabel.Content = dreamNameLabel.Content + " " + dreamCheck.Price.ToString();
-
+				
 								UpdateProgressBar();
 
 						}
@@ -87,8 +87,9 @@ namespace Monny
 			double difference = (totalIncome - totalExpance);
 			if (difference >= 0)
 			{
-				ProgressBar.Value = difference / 100;
-				money.Text =  "("+difference+" UAH)";
+				ProgressBar.Value = (difference * 100)/dbContext.Set<Dream>().ToList().Find(p=>p.UserId==controller.user.Id).Price;
+				money.Text = "(" + difference + " UAH)";
+
 			}
 			else 
 			{
