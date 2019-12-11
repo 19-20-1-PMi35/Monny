@@ -21,29 +21,10 @@ namespace Monny
     /// <summary>
     /// Логика взаимодействия для StatisticPage.xaml
     /// </summary>
-     public static class CanvasUtils
-    {
-        public static Canvas SetCoordinateSystem(this Canvas canvas, Double xMin, Double xMax, Double yMin, Double yMax)
-    {
-        var width = xMax - xMin;
-        var height = yMax - yMin;
+    
 
-        var translateX = -xMin;
-        var translateY = height + yMin;
-
-        var group = new TransformGroup();
-
-        group.Children.Add(new TranslateTransform(translateX, -translateY));
-        group.Children.Add(new ScaleTransform(canvas.ActualWidth / width, canvas.ActualHeight / -height));
-
-        canvas.RenderTransform = group;
-
-        return canvas;
-    }
-}
 public partial class StatisticPage : Page
     {
-        Random rand;
         public MainWindow mainWindow;
         private MonnyDbContext dbContext = new MonnyDbContext();
         public List<int> mounth = new List<int>();
@@ -55,6 +36,10 @@ public partial class StatisticPage : Page
         private List<Expense> expenses2;
         private List<Income> incomes1;
         private List<Income> incomes2;
+        /// <summary>
+        /// Initialize page, draw axis and label for them
+        /// </summary>
+        /// <param name="_mainWindow"></param>
         public StatisticPage(MainWindow _mainWindow)
         {
             InitializeComponent();
@@ -67,9 +52,13 @@ public partial class StatisticPage : Page
             DrawText(canvas1, "200", new Point(-7, 210), 270, 10);
 
         }
+        /// <summary>
+        /// Function, which  chooses tmo-month's expenses and incomes, calls the function for drawing grafics
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void but_Click(object sender, RoutedEventArgs e)
         {
-            rand = new Random();
             expenses = dbContext.Set<Expense>().ToList().FindAll(u => (u.Date.Month==mounth[0]));
             expenses2 = dbContext.Set<Expense>().ToList().FindAll(u => (u.Date.Month == mounth[1]));
             incomes1 = dbContext.Set<Income>().ToList().FindAll(u => (u.Date.Month == mounth[0]));
@@ -80,7 +69,9 @@ public partial class StatisticPage : Page
             col2.Visibility = Visibility.Visible;
             graf_2.Content = monthes[mounth[1]];
         }
-        
+        /// <summary>
+        /// Function for drawing grafics
+        /// </summary>
         private void CreatePoints()
         {
             polyLine.Points.Clear();
@@ -103,6 +94,12 @@ public partial class StatisticPage : Page
                 polyLine2.Points.Add(new Point(i*10,10+ money2*0.5));
             }
         }
+        /// <summary>
+        /// Method for analize grafics, show month, where you spend less, catagories, 
+        /// where you spend money the most and how much you save in these monthes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void analize_Click(object sender, RoutedEventArgs e)
         {
             double sum = 0, sum1 = 0;
@@ -161,6 +158,9 @@ public partial class StatisticPage : Page
 
 
         }
+        /// <summary>
+        /// Method, whisch checks quantity of choosing monthes
+        /// </summary>
         public void checking()
         {
             if (mounth.Capacity==3)
@@ -168,6 +168,9 @@ public partial class StatisticPage : Page
                 mounth.RemoveAt(0);
             }
         }
+        /// <summary>
+        /// Function, which draws the axises and show them
+        /// </summary>
         private void Axis()
         {
             Line axies_X = new Line();
@@ -187,7 +190,14 @@ public partial class StatisticPage : Page
             canvas1.Children.Add(axies_X);
             canvas1.Children.Add(axies_Y);
         }
-        // Position a label at the indicated point.
+        /// <summary>
+        /// Method, which adds the labels near axises and rotates them
+        /// </summary>
+        /// <param name="can"></param>
+        /// <param name="text"></param>
+        /// <param name="location"></param>
+        /// <param name="angle"></param>
+        /// <param name="font_size"></param>
         private void DrawText(Canvas can, string text, Point location, double angle,
             double font_size)
         {
@@ -211,6 +221,11 @@ public partial class StatisticPage : Page
                 y -= label.DesiredSize.Height;
             Canvas.SetTop(label, y);
         }
+        /// <summary>
+        /// Events, which works when you check CheckBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void febrary_Checked(object sender, RoutedEventArgs e)
         {
             checking();
