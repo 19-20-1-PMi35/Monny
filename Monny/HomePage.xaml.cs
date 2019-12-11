@@ -53,6 +53,11 @@ namespace Monny
 			frame.Navigate(new StatisticPage(controller));
 		}
         
+    private void ListView_MouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
+		{
+			frame.Navigate(new DreamPage(controller));
+		}
+    
     private void monny1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
        MemeWindow meme = new MemeWindow(controller, this);

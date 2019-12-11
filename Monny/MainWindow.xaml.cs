@@ -36,7 +36,7 @@ namespace Monny
         }
 		public enum pages
 		{
-			start, signIn, signUp, home, expense
+			start, signIn, signUp, home, expense, dream
 		}
 
 		public void OpenPage(pages pages)
@@ -57,7 +57,11 @@ namespace Monny
             {
                 //frame.Navigate(new ExpensePage(this));
             }
-            else
+			else if (pages == pages.dream)
+			{
+				frame.Navigate(new DreamPage(this));
+			}
+			else
 			{
 				frame.Navigate(new StartPage(this));
 			}
