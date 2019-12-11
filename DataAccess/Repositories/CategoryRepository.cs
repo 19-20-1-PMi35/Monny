@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Repositories
 {
+    /// <summary>
+    /// Repository for Categories table
+    /// </summary>
     public class CategoryRepository
     {
         private readonly MonnyDbContext dbContext;

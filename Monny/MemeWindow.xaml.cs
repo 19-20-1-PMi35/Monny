@@ -34,7 +34,7 @@ namespace Monny
         private void MemeGenerator_Click(object sender, RoutedEventArgs e)
         {
             Random r = new Random();
-            int randomi = r.Next(1, 7);
+            int randomi = r.Next(1, 4);
             memes.Source = controller.SetImageSource($"{randomi.ToString()}.png");
         }
     }

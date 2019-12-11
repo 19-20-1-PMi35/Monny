@@ -5,6 +5,12 @@ using DataAccess.Entities;
 
 namespace DataAccess.Entities
 {
+    /// <summary>
+    /// Category entity with fields:
+    /// - Id
+    /// - Name
+    /// - CategoryType
+    /// </summary>
     public class Category
     {
         public int Id { get; set; }

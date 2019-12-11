@@ -26,6 +26,7 @@ namespace Monny
 			InitializeComponent();
 			controller = _mainWindow;
             monny1.Source = controller.SetImageSource("banner3.png");
+			welcome.Content += controller.user.Name;
         }
 		private void OpenMenuButton_Click(object sender, RoutedEventArgs e)
 		{
@@ -53,12 +54,18 @@ namespace Monny
 			frame.Navigate(new StatisticPage(controller));
 		}
         
-    private void ListView_MouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
+		private void ListView_MouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
 		{
 			frame.Navigate(new DreamPage(controller));
 		}
-    
-    private void monny1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		private void ListView_MouseLeftButtonUp_4(object sender, MouseButtonEventArgs e)
+		{
+			controller.user = null;
+			controller.OpenPage(MainWindow.pages.start);
+			//frame.Navigate(new DreamPage(controller));
+		}
+
+		private void monny1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
        MemeWindow meme = new MemeWindow(controller, this);
        meme.ShowDialog();

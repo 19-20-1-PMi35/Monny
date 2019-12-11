@@ -5,6 +5,13 @@ using DataAccess.Entities;
 
 namespace DataAccess.Entities
 {
+    /// <summary>
+    /// User entity with fields:
+    /// - Name
+    /// - Surname
+    /// - Email
+    /// - Password
+    /// </summary>
     public class User
     {
         public int Id { get; set; }

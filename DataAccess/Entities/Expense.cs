@@ -4,6 +4,13 @@ using System.Text;
 
 namespace DataAccess.Entities
 {
+    /// <summary>
+    /// Expense entity with fields:
+    /// - Date
+    /// - AmountOfMoney
+    /// - CategoryId
+    /// - UserId
+    /// </summary>
     public class Expense
     {
         public int Id { get; set; }

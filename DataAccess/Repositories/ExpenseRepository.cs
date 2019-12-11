@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Repositories
 {
+    /// <summary>
+    /// Repository for Expenses table
+    /// </summary>
     public class ExpenseRepository
     {
         private readonly MonnyDbContext dbContext;

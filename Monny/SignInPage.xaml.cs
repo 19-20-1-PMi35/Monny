@@ -33,6 +33,7 @@ namespace Monny
 		{
 			InitializeComponent();
 			controller = _mainWindow;
+			backgroundImage.Source = controller.SetImageSource("background2.jpg");
 		}
 		private void SignInButton_Click(object sender, RoutedEventArgs e)
 		{

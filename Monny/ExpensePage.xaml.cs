@@ -157,11 +157,14 @@ namespace Monny
 				progressBar.Background = Brushes.Red;
 				progressBar.BorderBrush = Brushes.DarkRed;
 				progressBar.Foreground = Brushes.Transparent;
-				status.Content = $"You have spent to much today. ({dailyExpenses}/{dailyMaximum})$";
+				status.Content = $"You have spent to much today. ({dailyExpenses}/{dailyMaximum})₴";
 			}
 			else
 			{
-				status.Content = $"You are going greate today! ({dailyExpenses}/{dailyMaximum})$";
+				progressBar.Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFB39DDB");
+				progressBar.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFB39DDB");
+				progressBar.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF512DA8");
+				status.Content = $"You are going greate today! ({dailyExpenses}/{dailyMaximum})₴";
 			}
 		}
 		private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

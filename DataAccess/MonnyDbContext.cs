@@ -6,6 +6,9 @@ using DataAccess.Entities;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// DbContext to interact with database
+    /// </summary>
     public class MonnyDbContext: DbContext
     {
         public MonnyDbContext() :

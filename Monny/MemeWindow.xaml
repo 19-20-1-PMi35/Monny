@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Monny"
         mc:Ignorable="d"
-        Title="MemeWindow" Height="450" Width="800">
+        Title="MemeWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Content="JUST CLICK!!!"  HorizontalAlignment="Center" VerticalAlignment="Center" Width = "170" Height = "44" Click="MemeGenerator_Click"/>
-        <Image x:Name="memes" Height="450" Width="800" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
+        <Image x:Name="memes" Height="450" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0"/>
     </Grid>
 </Window>
