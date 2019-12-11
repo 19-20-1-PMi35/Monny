@@ -380,3 +380,5 @@ C:\Users\Ksy\Documents\GitHub\NewMonny\Monny\Monny\obj\Debug\netcoreapp3.0\Monny
 C:\Users\Ksy\Documents\GitHub\NewMonny\Monny\Monny\obj\Debug\netcoreapp3.0\Monny.pdb
 C:\Users\Ksy\Documents\GitHub\NewMonny\Monny\Monny\obj\Debug\netcoreapp3.0\AddIncomeWindow.g.cs
 C:\Users\Ksy\Documents\GitHub\NewMonny\Monny\Monny\obj\Debug\netcoreapp3.0\AddIncomeWindow.baml
+C:\Users\Ksy\Documents\GitHub\NewMonny\Monny\Monny\obj\Debug\netcoreapp3.0\MemeWindow.g.cs
+C:\Users\Ksy\Documents\GitHub\NewMonny\Monny\Monny\obj\Debug\netcoreapp3.0\MemeWindow.baml

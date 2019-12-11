@@ -36,6 +36,7 @@ namespace Monny
 		{
 			InitializeComponent();
 			controller = _mainWindow;
+			backgroundImage.Source = controller.SetImageSource("background2.jpg");
 		}
 
 		private void SignUpButton_Click(object sender, RoutedEventArgs e)
@@ -63,6 +64,8 @@ namespace Monny
 
 					dbContext.Set<User>().Add(user);
 					dbContext.SaveChanges();
+
+					controller.user = user;
 
 					controller.OpenPage(MainWindow.pages.home);
 				}

@@ -5,6 +5,13 @@ using DataAccess.Entities;
 
 namespace DataAccess.Entities
 {
+    /// <summary>
+    /// User entity with fields:
+    /// - Name
+    /// - Surname
+    /// - Email
+    /// - Password
+    /// </summary>
     public class User
     {
         public int Id { get; set; }
@@ -15,5 +22,6 @@ namespace DataAccess.Entities
 
         public List<Expense> Expenses { get; set; }
         public List<Income> Incomes { get; set; }
+        public List<Dream> Dreams { get; set; }
     }
 }

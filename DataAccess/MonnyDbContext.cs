@@ -6,6 +6,9 @@ using DataAccess.Entities;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// DbContext to interact with database
+    /// </summary>
     public class MonnyDbContext: DbContext
     {
         public MonnyDbContext() :
@@ -14,6 +17,7 @@ namespace DataAccess
         public DbSet<User> Users { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Income> Incomes { get; set; }
+        public DbSet<Dream> Dreams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
