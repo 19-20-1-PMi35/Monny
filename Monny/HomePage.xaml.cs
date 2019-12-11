@@ -46,5 +46,9 @@ namespace Monny
         {
             frame.Navigate(new ExpensePage(controller));
         }
-    }
+		private void ListView_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
+		{
+			frame.Navigate(new StatisticPage(controller));
+		}
+	}
 }
