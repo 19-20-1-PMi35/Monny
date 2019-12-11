@@ -47,5 +47,11 @@ namespace Monny
         {
             frame.Navigate(new ExpensePage(controller));
         }
+
+        private void monny1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+           MemeWindow meme = new MemeWindow(controller, this);
+           meme.ShowDialog();
+        }
     }
 }

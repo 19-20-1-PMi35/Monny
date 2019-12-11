@@ -19,6 +19,9 @@
     <Compile Update="InputWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MemeWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddIncomeWindow.xaml">
@@ -34,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MemeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

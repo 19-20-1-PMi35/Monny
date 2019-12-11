@@ -35,7 +35,7 @@
 	<Grid>
         <Grid Background="#9e89cf" Width="960" Height="85" VerticalAlignment="Top" HorizontalAlignment="Right">
 			<Label Content="I am Monny!!!" FontFamily="Technical Italic" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Image x:Name="monny1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+            <Image x:Name="monny1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4" Grid.RowSpan="3" MouseLeftButtonUp="monny1_MouseLeftButtonUp" />
         </Grid>
         <Grid x:Name="GridMenu" Width="40" HorizontalAlignment="Left" Background="#2d5d46" Panel.ZIndex="1">
 			<StackPanel>
