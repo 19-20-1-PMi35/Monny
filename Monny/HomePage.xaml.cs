@@ -25,7 +25,8 @@ namespace Monny
 		{
 			InitializeComponent();
 			controller = _mainWindow;
-		}
+            monny1.Source = controller.SetImageSource("banner3.png");
+        }
 		private void OpenMenuButton_Click(object sender, RoutedEventArgs e)
 		{
 			OpenMenuButton.Visibility = Visibility.Collapsed;
@@ -37,19 +38,30 @@ namespace Monny
 			CloseMenuButton.Visibility = Visibility.Collapsed;
 		}
 
-        private void ListView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            frame.Navigate(new IncomePage(controller));
-        }
+    private void ListView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+       frame.Navigate(new IncomePage(controller));
+    }
 
-        private void ListView_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
-        {
-            frame.Navigate(new ExpensePage(controller));
-        }
-		private void ListView_MouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
+    private void ListView_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+    {
+       frame.Navigate(new ExpensePage(controller));
+    }
+    
+    private void ListView_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
+		{
+			frame.Navigate(new StatisticPage(controller));
+		}
+        
+    private void ListView_MouseLeftButtonUp_3(object sender, MouseButtonEventArgs e)
 		{
 			frame.Navigate(new DreamPage(controller));
 		}
-
+    
+    private void monny1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+       MemeWindow meme = new MemeWindow(controller, this);
+       meme.ShowDialog();
+    }
 	}
 }
