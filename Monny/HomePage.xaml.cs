@@ -38,20 +38,25 @@ namespace Monny
 			CloseMenuButton.Visibility = Visibility.Collapsed;
 		}
 
-        private void ListView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            frame.Navigate(new IncomePage(controller));
-        }
-
-        private void ListView_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
-        {
-            frame.Navigate(new ExpensePage(controller));
-        }
-
-        private void monny1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-           MemeWindow meme = new MemeWindow(controller, this);
-           meme.ShowDialog();
-        }
+    private void ListView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+       frame.Navigate(new IncomePage(controller));
     }
+
+    private void ListView_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+    {
+       frame.Navigate(new ExpensePage(controller));
+    }
+    
+    private void ListView_MouseLeftButtonUp_2(object sender, MouseButtonEventArgs e)
+		{
+			frame.Navigate(new StatisticPage(controller));
+		}
+        
+    private void monny1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+       MemeWindow meme = new MemeWindow(controller, this);
+       meme.ShowDialog();
+    }
+	}
 }

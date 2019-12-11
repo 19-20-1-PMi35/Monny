@@ -63,7 +63,7 @@
 						</StackPanel>
 					</ListViewItem>
 				</ListView>
-				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseLeftButtonUp="ListView_MouseLeftButtonUp_2">
 					<ListViewItem Height="60">
 						<StackPanel Orientation="Horizontal">
 							<materialDesign:PackIcon Kind="TrendingUp" Width="25" Height="25" VerticalAlignment="Center"></materialDesign:PackIcon>

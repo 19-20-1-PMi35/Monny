@@ -55,7 +55,8 @@
         <Button x:Name="other" Width="30" Height="30" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Other_Click">
             <materialDesign:PackIcon Margin="-16" Kind="AutoAwesome" Width="30" Height="30"/>
         </Button>
-        <Label Content="Other" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0"  FontFamily="Arial Rounded MT Bold" FontSize="16" />
-		<ProgressBar x:Name="progressBar" Height="15" Grid.Row="3" Grid.ColumnSpan="4" Width="900" HorizontalAlignment="Center" Minimum="0" Maximum="1000" VerticalAlignment="Center" Margin="0 0 10 00"/>
+        <Label Content="Other" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 70 0 0" FontSize="17"/>
+		    <Label x:Name="status" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 20 0 0" FontSize="17"/>
+	    	<ProgressBar x:Name="progressBar" Height="15" Grid.Row="3" Grid.ColumnSpan="4" Width="900" HorizontalAlignment="Center" Minimum="0" Maximum="1000" VerticalAlignment="Center" Margin="0 0 10 0"/>
 	</Grid>
 </Page>

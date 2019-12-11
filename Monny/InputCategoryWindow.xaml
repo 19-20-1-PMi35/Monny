@@ -1,0 +1,25 @@
+﻿<Window x:Class="Monny.InputCategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Monny"
+        mc:Ignorable="d"
+        Title="Input Category" Height="200" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Label x:Name="title" Grid.Row="0" Content="Category - " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+		<ComboBox x:Name="customCategories" Grid.Row="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Width="90"></ComboBox>
+		<Label x:Name="text" Grid.Row="1" Content="Price:" FontSize="16" HorizontalAlignment="Left" Margin="10 10 0 0"></Label>
+		<TextBox Grid.Row="2" x:Name="mainText" FontSize="16" Width="260" Margin="0 0 0 10" HorizontalAlignment="Center"></TextBox>
+		<Button Grid.Row="3" x:Name="add" Content="Add" Width="70" Margin="0 0 120 5" Click="Add_Click" IsDefault="True"></Button>
+		<Button Grid.Row="3" x:Name="addCategory" Content="New Category" Width="125" Margin="100 0 0 5" Click="AddCategory_Click"></Button>
+		<Button Grid.Row="3" x:Name="create" Content="Create" Width="80" Margin="0 0 130 5" Visibility="Collapsed" IsDefault="True" Click="Create_Click"></Button>
+		<Button Grid.Row="3" x:Name="cancel" Content="Cancel" Width="125" Margin="100 0 0 5" Visibility="Collapsed" Click="Cancel_Click"></Button>
+	</Grid>
+</Window>
