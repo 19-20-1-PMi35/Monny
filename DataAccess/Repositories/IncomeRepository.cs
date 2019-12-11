@@ -15,26 +15,26 @@ namespace DataAccess.Repositories
         {
             dbContext = new MonnyDbContext();
         }
-        public List<Category> GetItems()
+        public List<Income> GetItems()
         {
-            return dbContext.Set<Category>().ToList();
+            return dbContext.Set<Income>().ToList();
         }
-        public Category GetItem(int id)
+        public Income GetItem(int id)
         {
-            return dbContext.Set<Category>().Find(id);
+            return dbContext.Set<Income>().Find(id);
         }
-        public void Create(Category item)
+        public void Create(Income item)
         {
-            dbContext.Set<Category>().Add(item);
+            dbContext.Set<Income>().Add(item);
             dbContext.SaveChanges();
         }
         public void Delete(int id)
         {
-            Category item = dbContext.Set<Category>().Find(id);
-            dbContext.Set<Category>().Remove(item);
+            Income item = dbContext.Set<Income>().Find(id);
+            dbContext.Set<Income>().Remove(item);
             dbContext.SaveChanges();
         }
-        public void Update(Category item)
+        public void Update(Income item)
         {
             dbContext.Entry(item).State = EntityState.Modified;
             dbContext.SaveChanges();

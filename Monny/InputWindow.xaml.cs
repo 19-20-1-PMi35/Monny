@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Linq;
-
 using DataAccess.Entities;
 using DataAccess;
+using DataAccess.Repositories;
 
 namespace Monny
 {
@@ -40,10 +30,13 @@ namespace Monny
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+			// Validation of field price
 			if (Double.TryParse(price.Text, out double amount))
 			{
-				Category cat = dbContext.Set<Category>().ToList().Find(c => c.Name == category);
+				CategoryRepository categories = new CategoryRepository();
+				Category cat = categories.GetItems().Find(c => c.Name == category);
 
+				// Adding new expense to database
 				Expense expense = new Expense();
 				expense.CategoryId = cat.Id;
 				expense.AmountOfMoney = amount;
@@ -53,6 +46,7 @@ namespace Monny
 				dbContext.Set<Expense>().Add(expense);
 				dbContext.SaveChanges();
 
+				// Updating progress bar
 				expensePage.UpdateProgressBar(amount, date);
 				this.Close();
 			}
