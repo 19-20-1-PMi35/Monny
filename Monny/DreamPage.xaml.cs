@@ -18,7 +18,7 @@ using DataAccess.Entities;
 namespace Monny
 {
     /// <summary>
-    /// Логика взаимодействия для DreamPage.xaml
+    /// Logic for DreamPage.xaml
     /// </summary>
     public partial class DreamPage : Page
     {
@@ -35,6 +35,9 @@ namespace Monny
 			controller = _mainWindow;
 			dbContext = new MonnyDbContext();
 
+			/// <summary>
+			/// Array phrases 
+			/// </summary>
 			phrases = new string[13];
 			phrases[0] = "The best things in life are free.";
 			phrases[1] = "There are things more important than money, \n but you don't buy them without money.";
@@ -51,19 +54,22 @@ namespace Monny
 			phrases[12] = "It's not about the money, but rather the amount";
 			generatePhrase();
 
-		
 
-							Dream dreamCheck = dbContext.Set<Dream>().ToList().Find(d => d.UserId == controller.user.Id);
-							if(dreamCheck!=null)
-						{ 
-								dreamNameLabel.Content = dreamCheck.Name;
-								dreamNameLabel.Content = dreamNameLabel.Content + " " + dreamCheck.Price.ToString();
-				
-								UpdateProgressBar();
-
-						}
+			/// <summary>
+			/// show page
+			/// </summary>
+			Dream dreamCheck = dbContext.Set<Dream>().ToList().Find(d => d.UserId == controller.user.Id);
+			if(dreamCheck!=null)
+			{ 
+				dreamNameLabel.Content = dreamCheck.Name;
+				dreamNameLabel.Content = dreamNameLabel.Content + " " + dreamCheck.Price.ToString();		
+				UpdateProgressBar();
+			}
 		}
 
+		/// <summary>
+		/// function for generate random phrase(every time when user refresh page)
+		/// </summary>
 		private void generatePhrase()
 		{
 			Random rnd = new Random();
@@ -71,14 +77,18 @@ namespace Monny
 			Phrase.Content = phrases[randomIndex];
 		}
 
-
+		/// <summary>
+		/// button for open window
+		/// </summary>
 		private void add_Dream_Click(object sender, RoutedEventArgs e)
 		{
 			DreamInputWindow inputWindow = new DreamInputWindow(controller, this);
 			inputWindow.ShowDialog();
 		}
 
-
+		/// <summary>
+		/// logic for progress bar (function for change progress bar when change amount of money in user)
+		/// </summary>
 		public void UpdateProgressBar()
 		{
 
