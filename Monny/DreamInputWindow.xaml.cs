@@ -38,7 +38,7 @@ namespace Monny
         {
             dreamPage.dreamName = DreamName.Text;
             dreamPage.dreamPrice = Double.Parse(DreamPrice.Text);
-            dreamPage.dreamNamePage.Content = dreamPage.dreamName + " " + dreamPage.dreamPrice;
+            dreamPage.dreamNameLabel.Content = dreamPage.dreamName + " " + dreamPage.dreamPrice;
 
             if (Double.TryParse(DreamPrice.Text, out double amount))
             {

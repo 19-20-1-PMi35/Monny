@@ -9,19 +9,20 @@
       Title="DreamPage">
 
 
-    <Grid Background="LightGray">
+    <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition ></RowDefinition>
                 <RowDefinition ></RowDefinition>
                 <RowDefinition ></RowDefinition>
             </Grid.RowDefinitions>
-            <Label x:Name="dreamNamePage" Content="Назва мрії" FontFamily="Technical Italic" FontSize="50" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button x:Name="AddDreamButton" Content="Add" Width="60" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="add_Dream_Click">
+            <Label x:Name="dreamNameLabel" Content="Назва мрії" FontFamily="Arial Rounded MT Bold" FontSize="40" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Button x:Name="AddDreamButton" Content="Add" Width="60" Height="30" FontFamily="Arial Rounded MT Bold" Background="BlueViolet" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="add_Dream_Click">
             </Button>
 
-            <ProgressBar Margin="0,-50,0,0" x:Name="ProgressBar" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100" Value="50" Height="45" Grid.ColumnSpan="3"  />
-            <TextBlock Margin="0,-50,0,0" Grid.Column="0" Grid.Row="1" Text="{Binding ElementName=ProgressBar, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Label x:Name="Phrase" Margin="0,-100,0,0" Content="Цитатки" FontFamily="Technical Italic" FontSize="30" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <ProgressBar Margin="0,-30,0,0" x:Name="ProgressBar" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100" Value="0" Height="45" Grid.ColumnSpan="3" Background="BlueViolet"  />
+        <TextBlock Margin="0,-30,0,0" Grid.Column="0" Grid.Row="1" FontFamily="Arial Rounded MT Bold" Text="{Binding ElementName=ProgressBar, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock x:Name="money" Margin="100,-30,0,0" Grid.Column="0" Grid.Row="1" FontFamily="Arial Rounded MT Bold" Text="{Binding ElementName=ProgressBar, Path=Value, StringFormat={}{0:0}UAH}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label x:Name="Phrase" Margin="0,-50,0,0" Content="Цитатки" FontFamily="Arial Rounded MT Bold" FontSize="40" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
 
 </Page>

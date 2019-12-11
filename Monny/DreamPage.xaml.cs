@@ -30,40 +30,44 @@ namespace Monny
 
 		public DreamPage(MainWindow _mainWindow)
 		{
-			
+
 			InitializeComponent();
 			controller = _mainWindow;
 			dbContext = new MonnyDbContext();
 
 			phrases = new string[13];
-			phrases[0] = "Гроші — це свято, яке зажди з тобою.";
-			phrases[1]= "Є речі важливіші від грошей, але без грошей їх не купиш.";
-			phrases[2] = "Не в грошах щастя, а в їхній надійності.";
-			phrases[3] = "Не в грошах щастя, а в їхній кількості.";
-			phrases[4] = "Не в грошах щастя. А в покупках.";
-			phrases[5] = "Багатство – це вміння витрачати менше, ніж заробляєш.";
-			phrases[6] = "Багатство - це вміння відкладати і вкладати.";
-			phrases[7] = "Багатий не той, хто багато заробляє, а той, хто мало витрачає.";
-			phrases[8] = "Бідний не той, у кого немає грошей, а той, у кого немає мрії.";
-			phrases[9] = " Уміння правильно розпоряджатися грошима – одна з \n головних якостей багатих людей.";
-			phrases[10] = " З бажань багатство не виходить. \n Воно виходять з продуманого плану дій та з наполегливої праці.";
-			phrases[11] = " Важливо не те, скільки грошей ви заробляєте, а те, \n скільки грошей у вас залишається, як вони працюють на вас, \n і скільки поколінь ви зможете ними забезпечити.";
-			phrases[12] = "Не варто говорити про гроші з людьми, які їх мають набагато більше, або набагато менше.";
+			phrases[0] = "The best things in life are free.";
+			phrases[1] = "There are things more important than money, but you don't buy them without money.";
+			phrases[2] = "Money is a holiday that is always with you.";
+			phrases[3] = "Money doesn't grow on trees.";
+			phrases[4] = "The happiness is in the purchases rather than the actual money";
+			phrases[5] = "Wealth is the ability to spend less than you earn.";
+			phrases[6] = "Wealth is the ability to invest.";
+			phrases[7] = "A rich one is not the one who earns a lot, rather the one who spends a little";
+			phrases[8] = "The poor is not the one who has no money but the one who has no dream.";
+			phrases[9] = " The ability to properly manage money is one of \n the main qualities of rich people.";
+			phrases[10] = " Wealth does not come from desires. \n It comes from a thoughtful plan of action and from hard work.";
+			phrases[11] = "You shouldnt bring the topic of money, \n with people who earn either much more or much less";
+			phrases[12] = "It's not about the money, but rather the amount";
 			generatePhrase();
 
-			Dream dreamCheck=dbContext.Set<Dream>().ToList().Find(d => d.UserId == controller.user.Id);
-			if(dreamCheck!=null)
-			{
-				dreamNamePage.Content = dreamCheck.Name;
-				dreamNamePage.Content = dreamNamePage.Content + " " + dreamCheck.Price.ToString();
-				UpdateProgressBar();
-			}
+		
+
+							Dream dreamCheck = dbContext.Set<Dream>().ToList().Find(d => d.UserId == controller.user.Id);
+							if(dreamCheck!=null)
+						{ 
+								dreamNameLabel.Content = dreamCheck.Name;
+								dreamNameLabel.Content = dreamNameLabel.Content + " " + dreamCheck.Price.ToString();
+
+								UpdateProgressBar();
+
+						}
 		}
 
 		private void generatePhrase()
 		{
 			Random rnd = new Random();
-			int randomIndex = rnd.Next(0, 12);
+			int randomIndex = rnd.Next(0, 13);
 			Phrase.Content = phrases[randomIndex];
 		}
 
@@ -84,6 +88,7 @@ namespace Monny
 			if (difference >= 0)
 			{
 				ProgressBar.Value = difference / 100;
+				money.Text =  "("+difference+" UAH)";
 			}
 			else 
 			{
@@ -92,20 +97,6 @@ namespace Monny
 
 		}
 
-		/*
-		 метод
-		 {
-		 поточна сума=(дохід-витрати)
-		 (сума на мрію=100% поточна сума=?%)
-		 поточні відсотки=(поточна сума*100)/сума на мрію
-		 
-		 }
-		 */
-
-
-		/*
-		рандомні цитатки вставляє 
-		*/
 
 
 
