@@ -1,18 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DataAccess.Entities;
 using DataAccess;
 using DataAccess.Repositories;
-using System.Linq;
 
 namespace Monny
 {
@@ -33,15 +24,21 @@ namespace Monny
 			expensePage = _expensePage;
 			date = _date;
 
+			// Set ComboBox list Item with user's custom categories
 			ExpenseRepository repository = new ExpenseRepository();
+			// List where used custom categories ids are being saved
 			List<int> usedId = new List<int>();
 			foreach (Expense e in repository.GetItems())
 			{
+				// Checks if e is current user expense
+				// e.CategoryId > 7 because custom categories have id greater than 7
 				if (e.UserId == controller.user.Id && e.CategoryId > 7)
 				{
+					// Check if category hasn't been used already
 					if (!usedId.Exists(i => i == e.CategoryId))
 					{
 						CategoryRepository categories = new CategoryRepository();
+						// Add category to ComboBox Items
 						customCategories.Items.Add(categories.GetItem(e.CategoryId).Name);
 
 						usedId.Add(e.CategoryId);
@@ -49,14 +46,22 @@ namespace Monny
 				}
 			}
 		}
-
+		/// <summary>
+		/// Add new expense in custom user's category to database
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Add_Click(object sender, RoutedEventArgs e)
 		{
+			// Checks if custom category was selected
 			if (customCategories.SelectedIndex >= 0)
 			{
+				// Validation for field mainText (it is where price was entered)
 				if (Double.TryParse(mainText.Text, out double amount))
 				{
-					Category cat = dbContext.Set<Category>().ToList().Find(c => c.Name == customCategories.Items[customCategories.SelectedIndex].ToString());
+					// Adding to database
+					CategoryRepository categories = new CategoryRepository();
+					Category cat = categories.GetItems().Find(c => c.Name == customCategories.Items[customCategories.SelectedIndex].ToString());
 
 					Expense expense = new Expense
 					{
@@ -69,6 +74,7 @@ namespace Monny
 					ExpenseRepository repository = new ExpenseRepository();
 					repository.Create(expense);
 
+					// Updating progress bar
 					expensePage.UpdateProgressBar(amount, date);
 					this.Close();
 				}
@@ -82,7 +88,11 @@ namespace Monny
 				MessageBox.Show("Choose category from menu first.");
 			}
 		}
-
+		/// <summary>
+		/// Change UI for creating new category
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void AddCategory_Click(object sender, RoutedEventArgs e)
 		{
 			add.Visibility = Visibility.Collapsed;
@@ -91,7 +101,11 @@ namespace Monny
 			cancel.Visibility = Visibility.Visible;
 			text.Content = "Enter name of new category:";
 		}
-
+		/// <summary>
+		/// Change UI to default
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Cancel_Click(object sender, RoutedEventArgs e)
 		{
 			add.Visibility = Visibility.Visible;
@@ -100,8 +114,14 @@ namespace Monny
 			cancel.Visibility = Visibility.Collapsed;
 			text.Content = "Price:";
 		}
+		/// <summary>
+		/// Creating new category
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Create_Click(object sender, RoutedEventArgs e)
 		{
+			// Validation for new category name
 			if (!App.ContainNumbers(mainText.Text) && mainText.Text.Length != 0)
 			{
 				Category customCategory = new Category
@@ -113,8 +133,10 @@ namespace Monny
 				repository.Create(customCategory);
 
 				mainText.Text = "";
+				// Updating ComboBox Items
 				UpdateComboBox(customCategory.Name);
 
+				// Change UI to default
 				Cancel_Click(sender, e);
 			}
 			else
@@ -122,6 +144,7 @@ namespace Monny
 				MessageBox.Show("Incorrect name of category.");
 			}
 		}
+		// Update ComboBox Items
 		private void UpdateComboBox(string categoryName)
 		{
 			customCategories.Items.Add(categoryName);
