@@ -21,7 +21,6 @@ namespace Monny
     /// </summary>
     public partial class InputWindow : Window
     {
-
         private readonly MonnyDbContext dbContext;
         private string category;
 		private MainWindow controller;
@@ -47,14 +46,14 @@ namespace Monny
 
 				Expense expense = new Expense();
 				expense.CategoryId = cat.Id;
-				expense.AmountOfMoney = Double.Parse(price.Text);
+				expense.AmountOfMoney = amount;
 				expense.Date = date;
 				expense.UserId = controller.user.Id;
 
 				dbContext.Set<Expense>().Add(expense);
 				dbContext.SaveChanges();
 
-				expensePage.UpdateProgressBar();
+				expensePage.UpdateProgressBar(amount, date);
 				this.Close();
 			}
 			else
