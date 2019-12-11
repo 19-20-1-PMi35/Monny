@@ -41,15 +41,7 @@ namespace Monny
             // double sum = from t in temp
             //             where (t.UserId == controller.user.Id) && (t.Date.Month == now.Month).Sum(l => l.MoneyCount);
             //               temp.Sum(t => t.MoneyCount);
-            asum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 1 && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
-            psum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 2 && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
-            progressBar.Value = asum;
-            progressBar2.Value = psum;
-           
-
-            active.Content = asum;
-            passive.Content = psum;
-            total.Content = asum + psum;
+            
             this.DataContext = this;
           
         }
@@ -79,18 +71,13 @@ namespace Monny
             AddIncome("Shares");
         }
 
-        private void ComboBox_Selected(object sender, RoutedEventArgs e)
-        {
-            month_id = Months.SelectedIndex;
-            month_id++;
-        }
+        
         private void AddIncome(string category)
         {
             /*if (month_id != null)
             {
                 if (month_id < System.DateTime.Now.Month)
                 {*/
-
                     AddIncomeWindow new_form = new AddIncomeWindow(controller, this, category, month_id);
                     new_form.ShowDialog();
                /* }
@@ -142,6 +129,26 @@ namespace Monny
                 MessageBox.Show($"You have no cash in your personal piggy bank. \nIt means your expenses are higher than your incomes, try to learn about money managment!.", "pig saver");
 
             }
+        }
+        private void Set_Values_for_updated(int month_id)
+        {
+            asum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 1 && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
+            psum = database_variable.Set<Income>().ToList().Where(e => (e.UserId == controller.user.Id && e.CategoryCheck == 2 && e.Date.Month == month_id)).Sum(e => e.MoneyCount);
+            progressBar.Value = asum;
+            progressBar2.Value = psum;
+
+
+            active.Content = asum;
+            passive.Content = psum;
+            total.Content = asum + psum;
+        }
+
+        private void ComboBox_Selected(object sender, SelectionChangedEventArgs e)
+        {
+            month_id = Months.SelectedIndex;
+            month_id++;
+            Set_Values_for_updated(month_id);
+
         }
     }
 }

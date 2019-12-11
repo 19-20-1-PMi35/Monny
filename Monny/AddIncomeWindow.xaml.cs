@@ -32,8 +32,9 @@ namespace Monny
             category = _category;
             controller = _mainWindow;
             incomePage = _incomePage;
-            date = new DateTime(2019, month_id, 1);
-        }
+        
+            date = new DateTime(2019, month_id, 1, 0,0,0);
+        } 
         private void Add_Income_Click(object sender, RoutedEventArgs e)
         {
             if (Double.TryParse(price.Text, out double amount))
